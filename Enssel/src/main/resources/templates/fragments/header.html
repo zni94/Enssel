@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<header th:fragment="header">
+    <div class="enssel-header-menu-bar">
+        <div class="enssel-logo-img">
+            <a th:href="'/enssel/'+${lang}">Enssel</a>
+        </div>
+        <div class="enssel-menu-items">
+            <div class="enssel-menu-item">
+                <span></span>
+                <h6>회사정보</h6>
+            </div>
+            <div class="enssel-menu-item">
+                <span></span>
+                <h6>사업분야</h6>
+            </div>
+            <div class="enssel-menu-item">
+                <span></span>
+                <h6>E-NOW</h6>
+            </div>
+            <div class="enssel-menu-item">
+                <span></span>
+                <h6>CONTACT</h6>
+            </div>
+            <div class="enssel-menu-item">
+                <span></span>
+                <h6 th:if="${lang=='kr'}"><a th:text="KOR" th:href="'/enssel/en'"></a></h6>
+                <h6 th:unless="${lang=='kr'}"><a th:text="ENG" th:href="'/enssel/kr'"></a></h6>
+            </div>
+        </div>
+    </div>
+    <div class="enssel-header-menu-detail">
+        <div class="enssel-detail-items">
+            <ul class="enssel-detail-item">
+                <li><a th:href="'/enssel/'+${lang}+'?page=introduce&display=vision'">회사비전</a></li>
+                <li><a th:href="'/enssel/'+${lang}+'?page=introduce&display=core'">핵심가치</a></li>
+                <li><a th:href="'/enssel/'+${lang}+'?page=introduce&display=history'">회사이력</a></li>
+            </ul>
+            <ul class="enssel-detail-item">
+                <li><a th:href="'/enssel/'+${lang}+'?page=business&display=smart-factory'">스마트 팩토리</a></li>
+                <li><a th:href="'/enssel/'+${lang}+'?page=business&display=ai'">인공지능</a></li>
+                <li><a th:href="'/enssel/'+${lang}+'?page=business&display=semiconductor'">반도체 장비</a></li>
+            </ul>
+            <ul class="enssel-detail-item">
+                <li><a th:href="'/enssel/'+${lang}+'?page=enow&display=culture'">조직문화</a></li>
+                <li><a th:href="'/enssel/'+${lang}+'?page=enow&display=crew'">엔셀 Crew</a></li>
+                <li><a th:href="'/enssel/'+${lang}+'?page=enow&display=notice'">엔셀 소식</a></li>
+            </ul>
+            <ul class="enssel-detail-item">
+                <li><a th:href="'/enssel/'+${lang}+'?page=contact&display=map'">오시는 길</a></li>
+                <li><a th:href="'/enssel/'+${lang}+'?page=contact&display=inquiry'">제품문의</a></li>
+                <li><a th:href="'/enssel/'+${lang}+'?page=contact&display=contact'">연락처</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+</html>

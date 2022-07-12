@@ -1,0 +1,30 @@
+server:
+  port: 8081
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  servlet:
+    context-path: /enssel
+    multipart: ## Multipart Properties
+      enabled: true # Enable multipart uploads
+      max-file-size: 200MB # Max File Size
+      max-request-size: 215MB # Max Request Size
+
+#Devtools config
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+      exclude: static/**, templates/**
+  #Thymeleaf config
+  thymeleaf:
+    mode: HTML
+    encoding: UTF-8
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
