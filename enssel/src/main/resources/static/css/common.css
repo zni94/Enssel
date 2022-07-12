@@ -77,7 +77,7 @@ input:focus, textarea:focus {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  margin: 3rem 15rem;
+  margin: 3rem 20rem;
 }
 .enssel-page-layout .enssel-contents .enssel-page-title {
   display: flex;
