@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko"
+      layout:decorate="~{fragments/layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<section class="enssel-index" layout:fragment="content">
+    <div class="enssel-main-item1">
+        <div class="enssel-info">
+            <h1>엔셀은</h1>
+            <div class="enssel-message">
+                <h4>사람과 기술이 연결/협업하는<br>세상을 만들어 나갑니다.</h4>
+            </div>
+            <div class="enssel-icons">
+                <div class="card">
+                    <div class="card-body">
+                        <a class="smart-factory" href="#"></a>
+                        <h5 class="card-title">Smart Factory</h5>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <a class="ai" href="#"></a>
+                        <h5 class="card-title">Artificial Intelligence</h5>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <a class="semiconductor" href="#"></a>
+                        <h5 class="card-title">Semiconductor</h5>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <a class="contact" href="#"></a>
+                        <h5 class="card-title">Contact</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel slide" data-bs-ride="true" id="carouselExampleIndicators">
+            <div class="carousel-indicators">
+                <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                        data-bs-target="#carouselExampleIndicators" type="button"></button>
+                <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators"
+                        type="button"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="5000">
+                    <img alt="..." class="d-block w-100"
+                         th:src="@{/img/main/carousel-1.jpg}">
+                </div>
+                <div class="carousel-item" data-interval="5000">
+                    <img alt="..." class="d-block w-100"
+                         th:src="@{/img/main/carousel-2.jpg}">
+                </div>
+            </div>
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="enssel-main-item2">
+        <h1 class="enssel-title">BUSINESS</h1>
+        <div class="enssel-business-items">
+            <div class="enssel-business-item" data-item="smartFactory" onclick="viewControl(this)">
+                <img th:src="@{/img/main/3-1.jpg}">
+                <div class="enssel-business-preview">
+                    <h1>Smart Factory</h1>
+                    <h4>Read More →</h4>
+                </div>
+                <div class="enssel-business-view">
+                    <h1>Smart Factory</h1>
+                    <div class="enssel-business-info">
+                        <div class="enssel-business-information">
+                            <h5>Enssel은 제조공정 전반(생산,공정,품질,물류)의 생산성과 품질을 혁신하는 디지털 솔루션을 제공합니다.</h5>
+                            <h5>글로벌 최첨단 기업들과의 오랜 비즈니스 경험을 바탕으로 고객의 필요성 및 상황에 맞는 최적의 솔루션을 제공하고 있습니다.</h5>
+                        </div>
+                        <div class="enssel-business-kinds">
+                            <div>MES</div>
+                            <div>QMS</div>
+                            <div>EES</div>
+                            <div>YMS</div>
+                        </div>
+                    </div>
+                    <h4>Back ←</h4>
+                </div>
+            </div>
+            <div class="enssel-business-item" data-item="ai" onclick="viewControl(this)">
+                <img th:src="@{/img/main/3-2.jpg}">
+                <div class="enssel-business-preview">
+                    <h1>Artificial<br>Intelligence</h1>
+                    <h4>Read More →</h4>
+                </div>
+                <div class="enssel-business-view">
+                    <h1>Artificial Intelligence</h1>
+                    <div class="enssel-business-info">
+                        <div class="enssel-business-information">
+                            <h5>Enssel은 제조공정 전반(생산,공정,품질,물류)의 생산성과 품질을 혁신하는 디지털 솔루션을 제공합니다.</h5>
+                            <h5>글로벌 최첨단 기업들과의 오랜 비즈니스 경험을 바탕으로 고객의 필요성 및 상황에 맞는 최적의 솔루션을 제공하고 있습니다.</h5>
+                        </div>
+                        <div class="enssel-business-kinds">
+                            <div>MES</div>
+                            <div>QMS</div>
+                            <div>EES</div>
+                            <div>YMS</div>
+                        </div>
+                    </div>
+                    <h4>Back ←</h4>
+                </div>
+            </div>
+            <div class="enssel-business-item" data-item="semiconductor" onclick="viewControl(this)">
+                <img th:src="@{/img/main/3-3.jpg}">
+                <div class="enssel-business-preview">
+                    <h1>Semiconductor</h1>
+                    <h4>Read More →</h4>
+                </div>
+                <div class="enssel-business-view">
+                    <h1>Semiconductor</h1>
+                    <div class="enssel-business-info">
+                        <div class="enssel-business-information">
+                            <h5>Enssel은 제조공정 전반(생산,공정,품질,물류)의 생산성과 품질을 혁신하는 디지털 솔루션을 제공합니다.</h5>
+                            <h5>글로벌 최첨단 기업들과의 오랜 비즈니스 경험을 바탕으로 고객의 필요성 및 상황에 맞는 최적의 솔루션을 제공하고 있습니다.</h5>
+                        </div>
+                        <div class="enssel-business-kinds">
+                            <div>MES</div>
+                            <div>QMS</div>
+                            <div>EES</div>
+                            <div>YMS</div>
+                        </div>
+                    </div>
+                    <h4>Back ←</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="enssel-main-item3">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <h1>엔셀은 각 분야 최고 수준의 역량을 갖춘 인재들이 모여</h1>
+                    <h1>인공지능 및 반도체 산업의 혁신적인 솔루션을 개발하고 있습니다.</h1>
+                </div>
+                <a href="#">
+                    <p>More</p>
+                    <p>+</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="enssel-main-item4">
+        <h1 class="enssel-title">ENSSEL CULTURE</h1>
+        <div class="enssel-culture-photos">
+            <img alt="..." th:src="@{/img/main/5-1.jpg}">
+            <img alt="..." th:src="@{/img/main/5-2.jpg}">
+            <img alt="..." th:src="@{/img/main/5-3.jpg}">
+            <img alt="..." th:src="@{/img/main/5-4.jpg}">
+            <img alt="..." th:src="@{/img/main/5-5.jpg}">
+        </div>
+        <h2 class="enssel-title">엔셀은 사람이 최우선인 업무문화를 지향하고 있습니다.</h2>
+    </div>
+
+    <script th:inline="javascript">
+        function viewControl(item) {
+            // 이미 VIEW 상태일 시
+            if ($(item).hasClass('view')) {
+                resetClass();
+                return false;
+            }
+
+            var itemName = $(item).data('item');
+            resetClass();
+
+            $('.enssel-business-item').each(function () {
+                if ($(this).data('item') === itemName) {
+                    $(this).addClass('view');
+                } else {
+                    $(this).addClass('preview')
+                }
+            })
+
+            function resetClass() {
+                $('.enssel-business-item').each(function (index, item) {
+                    $(item).removeClass('view');
+                    $(item).removeClass('preview');
+                })
+            }
+        }
+    </script>
+</section>
+
+</html>

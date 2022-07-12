@@ -1,5 +1,68 @@
-.enssel-map-layout{
+.enssel-page-image {
+  background-image: url('../../img/contact/27.jpg');
+}
+
+.enssel-btn-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+
+  .enssel-btn {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    border: 2px solid rgba(120, 130, 255, 0.5);
+    text-align: center;
+    cursor: pointer;
+    margin: 0.5rem 1rem;
+    transition: all 0.5s;
+
+    > h2, > h4 {
+      margin: 0.2rem auto;
+    }
+
+    > h2 {
+      font-size: 1.0em;
+      font-weight: 900;
+    }
+
+    > h4 {
+      font-size: 0.7em;
+    }
+  }
+
+  .enssel-btn:hover, .enssel-btn.select {
+    background-color: rgba(120, 130, 255, 0.5);
+    color: white;
+    border: 0;
+    box-shadow: rgba(120, 130, 255, 0.5) 0 0 5px 2px;
+  }
+}
+
+.enssel-map-item {
+  display: none;
+  flex: auto;
+  flex-direction: column;
+  flex-wrap: nowrap;
   margin-top: 5rem;
 
+  > h1 {
+    color: #142482;
+    font-size: 2.5em;
+    font-weight: 900;
+  }
 
+  > .enssel-map-info{
+    
+  }
+}
+
+.enssel-map-item.select {
+  display: flex;
 }
