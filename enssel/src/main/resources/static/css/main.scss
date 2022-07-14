@@ -68,14 +68,15 @@ section.enssel-index {
         flex-direction: row;
         align-items: center;
         justify-items: center;
-        justify-content: space-between;
+        justify-content: center;
         padding: 5rem 0px 2rem;
 
         .card {
-          width: 17.5rem !important;
+          width: 30% !important;
           height: 11rem !important;
           border-radius: 0 !important;
-          background-color: rgba(73, 99, 144, 0.5);
+          background-color: rgba(120, 130, 255, 0.6);
+          margin: 0.5%;
 
           .card-body {
             display: grid;
@@ -96,7 +97,10 @@ section.enssel-index {
             }
 
             .card-title {
+              font-size: 1.3em;
               color: white;
+              margin: 0;
+              height: 30px;
             }
 
             a.smart-factory {
@@ -464,14 +468,15 @@ section.enssel-index {
           flex-direction: row;
           align-items: center;
           justify-items: center;
-          justify-content: space-between;
+          justify-content: center;
           padding: 2rem 0;
 
           .card {
-            width: 50% !important;
+            width: 48% !important;
             height: 9rem !important;
             border-radius: 0 !important;
-            background-color: rgba(73, 99, 144, 0.5);
+            background-color: rgba(120, 130, 255, 0.6);
+            margin: 1%;
 
             .card-body {
               display: flex;
@@ -495,6 +500,8 @@ section.enssel-index {
               .card-title {
                 font-size: 0.7em;
                 color: white;
+                margin: 0rem;
+                height: 15px;
               }
 
               a.smart-factory {

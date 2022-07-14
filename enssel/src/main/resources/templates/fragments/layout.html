@@ -10,6 +10,34 @@
 <section layout:fragment="content"></section>
 
 <footer th:replace="fragments/footer :: footer"></footer>
+<div class="enssel-modal">
+    <div class="enssel-modal-layout">
+
+    </div>
+</div>
+<script th:inline="javascript">
+    history.scrollRestoration = "manual"
+    const btnGroup = document.querySelector('div.enssel-btn-group');
+
+    var fix = {
+        add() {
+            $(btnGroup).addClass('fixed');
+        },
+        remove() {
+            $(btnGroup).removeClass('fixed');
+        }
+    }
+
+    window.addEventListener('scroll', function (e) {
+        let last_known_scroll_position = window.scrollY;
+
+        if (last_known_scroll_position > 1020) {
+            fix.add()
+        } else {
+            fix.remove()
+        }
+    });
+</script>
 </body>
 
 </html>

@@ -1,40 +1,5 @@
-.enssel-page-image {
+.enssel-page-image.map {
   background-image: url("../../img/contact/27.jpg");
-}
-
-.enssel-btn-group {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-}
-.enssel-btn-group .enssel-btn {
-  width: 85px;
-  height: 85px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-  border: 2px solid rgba(120, 130, 255, 0.5);
-  text-align: center;
-  cursor: pointer;
-  margin: 0.5rem 1rem;
-  transition: all 0.5s;
-}
-.enssel-btn-group .enssel-btn > h2, .enssel-btn-group .enssel-btn > h4 {
-  margin: 0.2rem auto;
-}
-.enssel-btn-group .enssel-btn > h2 {
-  font-size: 1em;
-  font-weight: 900;
-}
-.enssel-btn-group .enssel-btn > h4 {
-  font-size: 0.7em;
-}
-.enssel-btn-group .enssel-btn:hover, .enssel-btn-group .enssel-btn.select {
-  background-color: rgba(120, 130, 255, 0.3);
 }
 
 .enssel-map-item {

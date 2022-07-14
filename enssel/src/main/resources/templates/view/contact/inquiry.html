@@ -5,7 +5,7 @@
       xmlns:th="http://www.thymeleaf.org">
 
 <section class="enssel-page-layout" layout:fragment="content">
-    <div class="enssel-page-image">
+    <div class="enssel-page-image inquiry">
         <h1>ENSSEL PRODUCT INQUIRY</h1>
         <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
@@ -28,25 +28,27 @@
                 </tr>
                 <tr>
                     <td colspan="2" id="btnGroup">
-                        <input type="radio" id="AI" name="product" value="AI" onchange="selectEvent()">
-                        <label name="AI" for="AI" class="select-btn">AI</label>
+                        <input id="AI" name="product" onchange="selectEvent()" type="radio" value="AI">
+                        <label class="select-btn" for="AI" name="AI">AI</label>
 
-                        <input type="radio" id="SmartFactory" name="product" value="SmartFactory" onchange="selectEvent()">
-                        <label name="SmartFactory" for="SmartFactory" class="select-btn">Smart Factory</label>
+                        <input id="SmartFactory" name="product" onchange="selectEvent()" type="radio"
+                               value="SmartFactory">
+                        <label class="select-btn" for="SmartFactory" name="SmartFactory">Smart Factory</label>
 
-                        <input type="radio" id="Semiconductor" name="product" value="Semiconductor" onchange="selectEvent()">
-                        <label name="Semiconductor" for="Semiconductor" class="select-btn">Semiconductor</label>
+                        <input id="Semiconductor" name="product" onchange="selectEvent()" type="radio"
+                               value="Semiconductor">
+                        <label class="select-btn" for="Semiconductor" name="Semiconductor">Semiconductor</label>
                     </td>
                 </tr>
                 <tr class="form-data">
-                    <td><label>성명</label><br><input type="text" name="name"></td>
+                    <td><label>성명</label><br><input name="name" type="text"></td>
                     <td rowspan="3"><label>문의 사항</label><br><textarea name="rmrk"></textarea></td>
                 </tr>
                 <tr class="form-data">
-                    <td><label>연락처</label><br><input type="text" name="contact"></td>
+                    <td><label>연락처</label><br><input name="contact" type="text"></td>
                 </tr>
                 <tr class="form-data">
-                    <td><label>이메일</label><br><input type="text" name="email"></td>
+                    <td><label>이메일</label><br><input name="email" type="text"></td>
                 </tr>
                 <tr class="form-submit">
                     <td colspan="2">
@@ -58,14 +60,14 @@
     </div>
 
     <script th:inline="javascript">
-        function selectEvent(){
-            $('input[name=product]').each(function(index,item){
-                if($(item).prop('checked')){
+        function selectEvent() {
+            $('input[name=product]').each(function (index, item) {
+                if ($(item).prop('checked')) {
                     let itemName = $(item).prop('value');
-                    $('label[name='+itemName+']').addClass('select');
-                }else{
+                    $('label[name=' + itemName + ']').addClass('select');
+                } else {
                     let itemName = $(item).prop('value');
-                    $('label[name='+itemName+']').removeClass('select');
+                    $('label[name=' + itemName + ']').removeClass('select');
                 }
             })
         }

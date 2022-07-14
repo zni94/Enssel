@@ -1,8 +1,30 @@
+@keyframes scrollDown {
+  from {
+    bottom: 20px;
+  }
+  to {
+    bottom: 0px;
+  }
+}
+@keyframes modalActive {
+  from {
+    opacity: 0.5;
+    top: -50px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
 * {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+body {
+  position: relative;
 }
 
 a {
@@ -15,7 +37,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 1rem 0;
+  margin: 1% 0;
   padding: 0;
   overflow: hidden;
 }
@@ -32,7 +54,7 @@ input, textarea {
   resize: none;
   border: 1px solid #142482;
   border-radius: 5px;
-  padding: 0.2rem;
+  padding: 0.2%;
   width: 100%;
 }
 
@@ -41,7 +63,81 @@ input:focus, textarea:focus {
 }
 
 .enssel-title {
-  margin: 5rem 0;
+  margin: 5% 0;
+}
+
+.business-items {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 7% 2%;
+  align-items: center;
+}
+.business-items .business-item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(120, 130, 255, 0.6);
+  border-radius: 100%;
+  margin: 0 2%;
+  color: white;
+  font-weight: 900;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.enssel-btn-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+.enssel-btn-group .enssel-btn {
+  width: 85px;
+  height: 85px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: 2px solid rgba(120, 130, 255, 0.5);
+  text-align: center;
+  cursor: pointer;
+  margin: 0.5% 1%;
+}
+.enssel-btn-group .enssel-btn > h2, .enssel-btn-group .enssel-btn > h4 {
+  margin: 0.2% auto;
+}
+.enssel-btn-group .enssel-btn > h2 {
+  font-size: 0.8em;
+  font-weight: 900;
+}
+.enssel-btn-group .enssel-btn > h4 {
+  font-size: 0.6em;
+}
+.enssel-btn-group .enssel-btn:hover, .enssel-btn-group .enssel-btn.select {
+  background-color: rgba(120, 130, 255, 0.3);
+}
+.enssel-btn-group .enssel-btn:hover > h2, .enssel-btn-group .enssel-btn:hover > h4, .enssel-btn-group .enssel-btn.select > h2, .enssel-btn-group .enssel-btn.select > h4 {
+  color: white;
+}
+
+.enssel-btn-group.fixed {
+  width: auto !important;
+  flex-direction: column !important;
+  position: fixed;
+  right: 2%;
+  top: 25%;
+  transform: translateY(-50%);
+}
+.enssel-btn-group.fixed .enssel-btn {
+  margin: 10% 0;
 }
 
 .enssel-page-layout {
@@ -49,6 +145,7 @@ input:focus, textarea:focus {
   flex-direction: column;
   flex-wrap: nowrap;
   margin-top: 8vh;
+  position: relative;
 }
 .enssel-page-layout .enssel-page-image {
   width: 100%;
@@ -56,28 +153,94 @@ input:focus, textarea:focus {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 0 5rem;
+  padding: 0 5%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: flex-start;
   justify-content: center;
+  position: relative;
 }
 .enssel-page-layout .enssel-page-image > h1 {
   color: white;
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 5rem;
 }
 .enssel-page-layout .enssel-page-image > h2 {
   color: white;
   font-weight: 450;
   font-size: 1.5rem;
 }
+.enssel-page-layout .enssel-page-image .scroll-mark {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  justify-content: center;
+}
+.enssel-page-layout .enssel-page-image .scroll-mark .scroll-arrow {
+  width: 60px;
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  animation: scrollDown linear 1s infinite;
+}
+.enssel-page-layout .enssel-page-image .scroll-mark .scroll-arrow span {
+  height: 3px;
+  background-color: white;
+  position: absolute;
+}
+.enssel-page-layout .enssel-page-image .scroll-mark .scroll-arrow span#left {
+  transform: rotate(45deg);
+  width: 25px;
+  left: 9px;
+  bottom: 10px;
+}
+.enssel-page-layout .enssel-page-image .scroll-mark .scroll-arrow span#center {
+  transform: rotate(90deg);
+  width: 50px;
+  left: 5px;
+  bottom: 27px;
+}
+.enssel-page-layout .enssel-page-image .scroll-mark .scroll-arrow span#right {
+  transform: rotate(-45deg);
+  width: 25px;
+  right: 9px;
+  bottom: 10px;
+}
+.enssel-page-layout .enssel-page-image .scroll-mark h5 {
+  font-weight: 450;
+  font-size: 1em;
+  color: white;
+  margin: 0.5%;
+}
+.enssel-page-layout .enssel-page-image.map,
+.enssel-page-layout .enssel-page-image.inquiry,
+.enssel-page-layout .enssel-page-image.contact {
+  background-image: url("../img/contact/27.jpg");
+}
+.enssel-page-layout .enssel-page-image.smart-factory {
+  background-image: url("../img/business/smartFactory/16.jpg");
+}
+.enssel-page-layout .enssel-page-image.ai {
+  background-image: url("../img/business/ai/18.png");
+}
+.enssel-page-layout .enssel-page-image.semiconductor {
+  background-image: url("../img/business/semiconductor/21.jpg");
+}
 .enssel-page-layout .enssel-contents {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  margin: 3rem 20rem;
+  margin: 3% 20%;
 }
 .enssel-page-layout .enssel-contents .enssel-page-title {
   display: flex;
@@ -98,14 +261,14 @@ input:focus, textarea:focus {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  margin-top: 5rem;
+  margin-top: 5%;
 }
 .enssel-page-layout .enssel-contents .enssel-hr-line > h2 {
   color: #142482;
   margin: 20px 0 20px 10px;
 }
 .enssel-page-layout .enssel-contents .enssel-hr-line > hr {
-  margin: 0.5rem 0;
+  margin: 0.5% 0;
   color: inherit;
   border: 0;
   border-top: 3px solid #142482;
@@ -117,6 +280,82 @@ input:focus, textarea:focus {
   flex-direction: row;
   flex-wrap: nowrap;
   align-content: flex-end;
+}
+
+.enssel-items {
+  margin-top: 5%;
+}
+.enssel-items .enssel-item-layout {
+  display: flex;
+  padding: 5%;
+  margin: 0 auto;
+  margin-bottom: 2%;
+}
+.enssel-items .enssel-item-layout > .enssel-item-image, .enssel-items .enssel-item-layout > .enssel-item-info {
+  flex: 1;
+  padding: 5%;
+}
+.enssel-items .enssel-item-layout > .enssel-item-image > img, .enssel-items .enssel-item-layout > .enssel-item-info > img {
+  width: 100%;
+}
+.enssel-items .enssel-item-layout > .enssel-item-info > h1 {
+  color: #142482;
+  font-size: 1.5em;
+  font-weight: 900;
+}
+.enssel-items .enssel-item-layout > .enssel-item-info > h2 {
+  color: #142482;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.enssel-items .enssel-item-layout > .enssel-item-info > h4 {
+  font-size: 1em;
+  line-height: 1.7em;
+}
+.enssel-items .enssel-item-layout > .enssel-item-info .enssel-item-btn-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+}
+.enssel-items .enssel-item-layout > .enssel-item-info .enssel-item-btn-group > button {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  border: rgba(120, 130, 255, 0.5);
+  background-color: rgba(120, 130, 255, 0.8);
+  color: white;
+  border-radius: 10px;
+  width: 200px;
+  height: 45px;
+  font-weight: 900;
+  margin: 1rem 0;
+}
+
+.enssel-modal {
+  display: none;
+}
+
+.enssel-modal.active {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 1100;
+}
+.enssel-modal.active .enssel-modal-layout {
+  width: 680px;
+  height: 720px;
+  background-color: white;
+  margin-top: 8vh;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+  animation: modalActive linear 0.3s forwards;
 }
 
 @media (max-width: 1020px) {
@@ -132,7 +371,7 @@ input:focus, textarea:focus {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 0 1rem;
+    padding: 0 1%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -153,7 +392,7 @@ input:focus, textarea:focus {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    margin: 3rem 1rem;
+    margin: 3% 1%;
   }
   .enssel-page-layout .enssel-contents .enssel-page-title {
     display: flex;
@@ -174,7 +413,7 @@ input:focus, textarea:focus {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    mmargin-top: 5rem;
+    mmargin-top: 5%;
   }
   .enssel-page-layout .enssel-contents .enssel-hr-line > h2 {
     color: #142482;
@@ -182,7 +421,7 @@ input:focus, textarea:focus {
     margin: 20px 0 20px 10px;
   }
   .enssel-page-layout .enssel-contents .enssel-hr-line > hr {
-    margin: 0.5rem 0;
+    margin: 0.5% 0;
     color: inherit;
     border: 0;
     border-top: 3px solid #142482;

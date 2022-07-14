@@ -58,14 +58,15 @@ section.enssel-index .enssel-main-item1 .enssel-info .enssel-icons {
   flex-direction: row;
   align-items: center;
   justify-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 5rem 0px 2rem;
 }
 section.enssel-index .enssel-main-item1 .enssel-info .enssel-icons .card {
-  width: 17.5rem !important;
+  width: 30% !important;
   height: 11rem !important;
   border-radius: 0 !important;
-  background-color: rgba(73, 99, 144, 0.5);
+  background-color: rgba(120, 130, 255, 0.6);
+  margin: 0.5%;
 }
 section.enssel-index .enssel-main-item1 .enssel-info .enssel-icons .card .card-body {
   display: grid;
@@ -85,7 +86,10 @@ section.enssel-index .enssel-main-item1 .enssel-info .enssel-icons .card .card-b
   border-color: white;
 }
 section.enssel-index .enssel-main-item1 .enssel-info .enssel-icons .card .card-body .card-title {
+  font-size: 1.3em;
   color: white;
+  margin: 0;
+  height: 30px;
 }
 section.enssel-index .enssel-main-item1 .enssel-info .enssel-icons .card .card-body a.smart-factory {
   background-image: url("../img/main/2-1.png");
@@ -394,14 +398,15 @@ section.enssel-index .enssel-main-item4 .enssel-culture-photos > img {
     flex-direction: row;
     align-items: center;
     justify-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 2rem 0;
   }
   section.enssel-index .enssel-main-item1 .enssel-info .enssel-icons .card {
-    width: 50% !important;
+    width: 48% !important;
     height: 9rem !important;
     border-radius: 0 !important;
-    background-color: rgba(73, 99, 144, 0.5);
+    background-color: rgba(120, 130, 255, 0.6);
+    margin: 1%;
   }
   section.enssel-index .enssel-main-item1 .enssel-info .enssel-icons .card .card-body {
     display: flex;
@@ -424,6 +429,8 @@ section.enssel-index .enssel-main-item4 .enssel-culture-photos > img {
   section.enssel-index .enssel-main-item1 .enssel-info .enssel-icons .card .card-body .card-title {
     font-size: 0.7em;
     color: white;
+    margin: 0rem;
+    height: 15px;
   }
   section.enssel-index .enssel-main-item1 .enssel-info .enssel-icons .card .card-body a.smart-factory {
     background-image: url("../img/main/2-1.png");
