@@ -1,0 +1,6 @@
+cat .gitignore
+
+design/
+enssel_backup/
+result/
+
