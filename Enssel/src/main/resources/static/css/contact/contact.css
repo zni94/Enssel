@@ -1,0 +1,66 @@
+.enssel-contact-layout > table {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.enssel-contact-layout > table th, .enssel-contact-layout > table td {
+  vertical-align: middle;
+  padding: 1rem;
+  color: #142482;
+}
+.enssel-contact-layout > table th {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.enssel-contact-layout > table td {
+  font-size: 1.2rem;
+}
+.enssel-contact-layout > table td#img {
+  width: 15rem;
+  text-align: center;
+}
+.enssel-contact-layout > table th#title {
+  width: 30rem;
+}
+.enssel-contact-layout > table img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  border: 1px solid #142482;
+}
+
+@media (max-width: 1020px) {
+  .enssel-contact-layout > .enssel-contact-profile {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .enssel-contact-layout > .enssel-contact-profile th, .enssel-contact-layout > .enssel-contact-profile td {
+    vertical-align: middle;
+    padding: 0.5rem;
+  }
+  .enssel-contact-layout > .enssel-contact-profile th {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #142482;
+  }
+  .enssel-contact-layout > .enssel-contact-profile td {
+    color: #142482;
+    font-size: 1rem;
+  }
+  .enssel-contact-layout > .enssel-contact-profile td#img {
+    width: 10rem;
+    text-align: center;
+  }
+  .enssel-contact-layout > .enssel-contact-profile th#title {
+    width: 15rem;
+  }
+  .enssel-contact-layout > .enssel-contact-profile img {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    border: 1px solid #142482;
+  }
+}
+
+/*# sourceMappingURL=contact.css.map */

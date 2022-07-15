@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko"
+      layout:decorate="~{fragments/layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<section class="enssel-page-layout" layout:fragment="content">
+    <div class="enssel-page-image">
+        <h1>ENSSEL PRODUCT INQUIRY</h1>
+        <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book.</h2>
+    </div>
+
+    <div class="enssel-contents">
+        <div class="enssel-page-title" style="width: 200px;">
+            <span></span>
+            <h1>제품문의</h1>
+        </div>
+        <div class="enssel-hr-line">
+            <h2>Enssel의 어떤 분야에 문의 사항이 있으신가요?</h2>
+            <hr>
+        </div>
+        <div class="enssel-inquiry-layout">
+            <table>
+                <tr>
+                    <th colspan="2" id="title">▶&emsp;제품 종류를 선택해주세요.</th>
+                </tr>
+                <tr>
+                    <td colspan="2" id="btnGroup">
+                        <input type="radio" id="AI" name="product" value="AI" onchange="selectEvent()">
+                        <label name="AI" for="AI" class="select-btn">AI</label>
+
+                        <input type="radio" id="SmartFactory" name="product" value="SmartFactory" onchange="selectEvent()">
+                        <label name="SmartFactory" for="SmartFactory" class="select-btn">Smart Factory</label>
+
+                        <input type="radio" id="Semiconductor" name="product" value="Semiconductor" onchange="selectEvent()">
+                        <label name="Semiconductor" for="Semiconductor" class="select-btn">Semiconductor</label>
+                    </td>
+                </tr>
+                <tr class="form-data">
+                    <td><label>성명</label><br><input type="text" name="name"></td>
+                    <td rowspan="3"><label>문의 사항</label><br><textarea name="rmrk"></textarea></td>
+                </tr>
+                <tr class="form-data">
+                    <td><label>연락처</label><br><input type="text" name="contact"></td>
+                </tr>
+                <tr class="form-data">
+                    <td><label>이메일</label><br><input type="text" name="email"></td>
+                </tr>
+                <tr class="form-submit">
+                    <td colspan="2">
+                        <button class="submit-btn">제출하기</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script th:inline="javascript">
+        function selectEvent(){
+            $('input[name=product]').each(function(index,item){
+                console.log($(item).prop('checked'))
+                if($(item).prop('checked')){
+                    let itemName = $(item).prop('value');
+                    $('label[name='+itemName+']').addClass('select');
+                }else{
+                    let itemName = $(item).prop('value');
+                    $('label[name='+itemName+']').removeClass('select');
+                }
+            })
+        }
+    </script>
+</section>
+
+</html>

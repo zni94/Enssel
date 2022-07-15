@@ -1,0 +1,83 @@
+$EnsselColor: #142482;
+
+.enssel-contact-layout {
+  > table {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    th, td {
+      vertical-align: middle;
+      padding: 1rem;
+      color: $EnsselColor;
+    }
+
+    th {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    td {
+      font-size: 1.2rem;
+    }
+
+    td#img {
+      width: 15rem;
+      text-align: center;
+    }
+
+    th#title {
+      width: 30rem;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+      border: 1px solid $EnsselColor;
+    }
+  }
+}
+
+// Max-width < 1020px
+@media (max-width: 1020px) {
+  .enssel-contact-layout {
+    > .enssel-contact-profile {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+
+      th, td {
+        vertical-align: middle;
+        padding: 0.5rem;
+      }
+
+      th {
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: $EnsselColor;
+      }
+
+      td {
+        color: $EnsselColor;
+        font-size: 1.0rem;
+      }
+
+      td#img {
+        width: 10rem;
+        text-align: center;
+      }
+
+      th#title {
+        width: 15rem;
+      }
+
+      img {
+        width: 75px;
+        height: 75px;
+        border-radius: 100%;
+        border: 1px solid $EnsselColor;
+      }
+    }
+  }
+}

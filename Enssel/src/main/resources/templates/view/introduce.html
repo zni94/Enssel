@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko"
+      layout:decorate="~{fragments/layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<section class="enssel-introduce" layout:fragment="content">
+    <div class="enssel-introduce-bar">
+        <div>
+            <h1 class="enssel-title">회사정보</h1>
+        </div>
+        <div class="enssel-display-items">
+            <div class="enssel-display-item" name="vision" onclick="VIEW.pageLoad(this)">
+                회사비전
+            </div>
+            <div class="enssel-display-item" name="history" onclick="VIEW.pageLoad(this)">
+                회사이력
+            </div>
+            <div class="enssel-display-item" name="core" onclick="VIEW.pageLoad(this)">
+                핵심가치
+            </div>
+        </div>
+    </div>
+
+    <div class="enssel-contents enssel-vision">
+        <h1>비전</h1>
+        <div class="enssel-vision-img">
+            <img src="https://via.placeholder.com/1920x920/000000/111111" alt="...">
+        </div>
+        <h2>엔셀은 IT기술에 인공지능 기술을 결합하여 고도화된 스마트팩토리 솔루션을 제공하고 있습니다.</h2>
+    </div>
+    <div class="enssel-contents enssel-history">
+        <h1></h1>
+        <div class="enssel-history-img">
+            <img src="https://via.placeholder.com/1920x920/000000/111111" alt="...">
+        </div>
+        <h2></h2>
+    </div>
+    <div class="enssel-contents enssel-core">
+        <h1>핵심가치</h1>
+        <div class="enssel-core-img">
+            <img src="https://via.placeholder.com/1920x920/000000/111111" alt="...">
+        </div>
+        <h2></h2>
+    </div>
+
+    <script th:inline="javascript">
+        const display = /*[[${display}]]*/null;
+
+        $(document).ready(function () {
+            VIEW.init();
+        })
+
+        var VIEW = {
+            init() {
+                VIEW.displayInit(display);
+            },
+            displayInit(name) {
+                switch (name) {
+                    case "vision":
+                        $('.enssel-vision').show();
+                        $('.enssel-core').hide();
+                        $('.enssel-history').hide();
+                        break;
+                    case "core":
+                        $('.enssel-vision').hide();
+                        $('.enssel-core').show();
+                        $('.enssel-history').hide();
+                        break;
+                    case "history":
+                        $('.enssel-vision').hide();
+                        $('.enssel-core').hide();
+                        $('.enssel-history').show();
+                        break;
+                }
+            },
+            pageLoad(item){
+                let name = $(item).attr('name');
+
+                VIEW.displayInit(name);
+            }
+        }
+    </script>
+</section>
+
+</html>
