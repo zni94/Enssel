@@ -17,11 +17,11 @@ header .enssel-header-menu-bar {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 2rem;
+  padding: 0.5% 2%;
   background-color: white;
 }
 header .enssel-header-menu-bar .enssel-logo-img {
-  padding: 0 1rem;
+  padding: 0 1%;
   cursor: pointer;
   text-align: center;
 }
@@ -58,6 +58,7 @@ header .enssel-header-menu-bar .enssel-menu-items .enssel-menu-item > h6 {
   font-weight: bold;
   font-size: 1.1em;
   text-align: center;
+  margin: 10% 0;
 }
 header .enssel-header-menu-bar .enssel-menu-items .enssel-menu-item:hover > span {
   width: 100%;

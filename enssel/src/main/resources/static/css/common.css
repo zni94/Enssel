@@ -133,7 +133,7 @@ input:focus, textarea:focus {
   flex-direction: column !important;
   position: fixed;
   right: 2%;
-  top: 25%;
+  top: 35%;
   transform: translateY(-50%);
 }
 .enssel-btn-group.fixed .enssel-btn {
@@ -144,7 +144,7 @@ input:focus, textarea:focus {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  margin-top: 8vh;
+  margin-top: 7.5vh;
   position: relative;
 }
 .enssel-page-layout .enssel-page-image {
@@ -222,8 +222,6 @@ input:focus, textarea:focus {
   color: white;
   margin: 0.5%;
 }
-.enssel-page-layout .enssel-page-image.map,
-.enssel-page-layout .enssel-page-image.inquiry,
 .enssel-page-layout .enssel-page-image.contact {
   background-image: url("../img/contact/27.jpg");
 }
@@ -235,6 +233,9 @@ input:focus, textarea:focus {
 }
 .enssel-page-layout .enssel-page-image.semiconductor {
   background-image: url("../img/business/semiconductor/21.jpg");
+}
+.enssel-page-layout .enssel-page-image.culture {
+  background-image: url("../img/enow/24.jpg");
 }
 .enssel-page-layout .enssel-contents {
   display: flex;
