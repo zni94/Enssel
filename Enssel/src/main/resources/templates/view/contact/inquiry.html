@@ -60,6 +60,7 @@
     <script th:inline="javascript">
         function selectEvent(){
             $('input[name=product]').each(function(index,item){
+                console.log($(item).prop('checked'))
                 if($(item).prop('checked')){
                     let itemName = $(item).prop('value');
                     $('label[name='+itemName+']').addClass('select');

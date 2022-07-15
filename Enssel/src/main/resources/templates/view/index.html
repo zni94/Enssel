@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko"
+      layout:decorate="~{fragments/layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<section class="enssel-index" layout:fragment="content">
+    <!-- Bootstrap Carousel -->
+    <div class="enssel-index-item1">
+        <div class="enssel-info">
+            <h1>엔셀은</h1>
+            <div class="enssel-message">
+                <h4>사람과 기술이 연결/협업하는 세상을 만들어 나갑니다.</h4>
+            </div>
+            <div class="enssel-icons">
+                <div class="card">
+                    <div class="card-body">
+                        <a class="btn btn-primary" href="#">ICON</a>
+                        <h5 class="card-title">Smart Factory</h5>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <a class="btn btn-primary" href="#">ICON</a>
+                        <h5 class="card-title">Artificial Intelligence</h5>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <a class="btn btn-primary" href="#">ICON</a>
+                        <h5 class="card-title">Semiconductor</h5>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <a class="btn btn-primary" href="#">ICON</a>
+                        <h5 class="card-title">Contact</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel slide" data-bs-ride="true" id="carouselExampleIndicators">
+            <div class="carousel-indicators">
+                <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                        data-bs-target="#carouselExampleIndicators" type="button"></button>
+                <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators"
+                        type="button"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="3000">
+                    <img alt="..." class="d-block w-100" src="https://via.placeholder.com/1920x920/000000/111111"
+                         style="height: 100%">
+                </div>
+                <div class="carousel-item" data-interval="3000">
+                    <img alt="..." class="d-block w-100" src="https://via.placeholder.com/1920x920/000000/111111"
+                         style="height: 100%">
+                </div>
+            </div>
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Business Section -->
+    <div class="enssel-index-item2">
+        <h1 class="enssel-title">BUSINESS</h1>
+        <div>
+
+        </div>
+    </div>
+
+    <div class="enssel-index-item3">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <h1>엔셀은 각 분야 최고 수준의 역량을 갖춘 인재들이 모여</h1>
+                    <h1>인공지능 및 반도체 산업의 혁신적인 솔루션을 개발하고 있습니다.</h1>
+                </div>
+                <a class="btn btn-primary" href="#">More<br/>+</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="enssel-index-item4">
+        <h1 class="enssel-title">ENSSEL CULTURE</h1>
+        <div class="enssel-culture-photos">
+            <img alt="..." src="https://via.placeholder.com/1920x919/FF0000/111111?text=img1">
+            <img alt="..." src="https://via.placeholder.com/1920x919/FFA600/111111?text=img2">
+            <img alt="..." src="https://via.placeholder.com/1920x919/FBFF00/111111?text=img3">
+            <img alt="..." src="https://via.placeholder.com/1920x919/64FF00/111111?text=img4">
+            <img alt="..." src="https://via.placeholder.com/1920x919/00F3FF/111111?text=img5">
+            <img alt="..." src="https://via.placeholder.com/1920x919/0017FF/111111?text=img6">
+            <img alt="..." src="https://via.placeholder.com/1920x919/AA00FF/111111?text=img7">
+        </div>
+        <h2 class="enssel-title">엔셀은 사람이 최우선인 업무문화를 지향하고 있습니다.</h2>
+    </div>
+</section>
+
+</html>
