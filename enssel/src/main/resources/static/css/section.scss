@@ -1,0 +1,203 @@
+@keyframes slideImg {
+  0% {
+    left: -75%;
+  }
+
+  25% {
+    left: 0%;
+  }
+
+  50% {
+    left: -75%;
+  }
+
+  75% {
+    left: -150%;
+  }
+
+  100% {
+    left: -75%;
+  }
+}
+
+// Index Page
+section.enssel-index {
+  width: 100%;
+  height: 400vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr auto;
+
+  .enssel-index-item1 {
+    height: 100vh;
+
+    .enssel-info {
+      display: flex;
+      padding-top: 15%;
+      padding-bottom: 5%;
+      position: absolute;
+      width: 60%;
+      z-index: 900;
+      top: 7vh;
+      left: 50%;
+      transform: translateX(-50%);
+      flex-direction: column;
+      align-items: center;
+
+      > h1 {
+        color: white;
+        width: 100%;
+        font-weight: 900;
+        text-align: center;
+      }
+
+      .enssel-message {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        > h4 {
+          color: white;
+          width: 100%;
+          font-weight: 300;
+          line-height: 3rem;
+        }
+      }
+
+      .enssel-icons {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-items: center;
+        justify-content: space-between;
+        padding: 5rem 0px 2rem;
+
+        .card {
+          width: 17.5rem !important;
+          height: 11rem !important;
+          border-radius: 0 !important;
+          background-color: rgba(73, 99, 144, 0.5);
+
+          .card-body {
+            display: grid;
+            grid-template-rows: 7fr 3fr auto;
+            text-align: center;
+            justify-items: center;
+            align-items: center;
+
+            .btn.btn-primary {
+              width: 5rem !important;
+              height: 5rem !important;
+              border-radius: 100% !important;
+              background-color: transparent !important;
+              line-height: 4.1rem;
+              border-color: white;
+            }
+
+            .card-title {
+              color: white;
+            }
+          }
+
+        }
+      }
+    }
+
+    // Bootstrap Carousel
+    .carousel {
+      height: 100vh;
+    }
+  }
+
+  .enssel-index-item2 {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 9fr auto;
+    align-items: center;
+    justify-items: center;
+
+    h1 {
+      color: #142482;
+      font-weight: 900;
+      text-align: center;
+    }
+  }
+
+  .enssel-index-item3 {
+    height: 100vh;
+    background-image: url('https://via.placeholder.com/1918x919/000000/111111?text=TEST IMG 3');
+
+    .card {
+      width: 100%;
+      height: 50%;
+      background-color: transparent;
+      border: none;
+      position: relative;
+      top: 60%;
+      transform: translateY(-50%);
+      text-align: center;
+
+      .card-body {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+
+        h1 {
+          color: white;
+          margin-bottom: 3vh;
+          font-weight: 700;
+        }
+
+        .btn.btn-primary {
+          border-radius: 100%;
+          border: 2px dotted white;
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  .enssel-index-item4 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      color: #142482;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    h2 {
+      color: #6d6d6d;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .enssel-culture-photos {
+      white-space: nowrap;
+      width: 300%;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      left: -75%;
+      animation: slideImg 30s linear infinite;
+
+      > img {
+        min-width: 30rem;
+        min-height: 20rem;
+        width: 35rem;
+        height: 25rem;
+      }
+    }
+  }
+}
