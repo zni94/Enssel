@@ -1,13 +1,15 @@
 $EnsselColor: #142482;
 
 .enssel-contact-layout {
+  margin-top: 3rem;
+
   > table {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
 
     th, td {
-      vertical-align: middle;
+      vertical-align: top;
       padding: 1rem;
       color: $EnsselColor;
     }
@@ -33,8 +35,7 @@ $EnsselColor: #142482;
     img {
       width: 150px;
       height: 150px;
-      border-radius: 100%;
-      border: 1px solid $EnsselColor;
+      border: none;
     }
   }
 }
@@ -42,41 +43,30 @@ $EnsselColor: #142482;
 // Max-width < 1020px
 @media (max-width: 1020px) {
   .enssel-contact-layout {
-    > .enssel-contact-profile {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-
+    > table {
       th, td {
-        vertical-align: middle;
         padding: 0.5rem;
       }
 
       th {
-        font-weight: bold;
         font-size: 1.5rem;
-        color: $EnsselColor;
-      }
-
-      td {
-        color: $EnsselColor;
-        font-size: 1.0rem;
-      }
-
-      td#img {
-        width: 10rem;
-        text-align: center;
       }
 
       th#title {
         width: 15rem;
       }
 
-      img {
-        width: 75px;
-        height: 75px;
-        border-radius: 100%;
-        border: 1px solid $EnsselColor;
+      td {
+        font-size: 1.0rem;
+      }
+
+      td#img {
+        width: 8rem;
+
+        img {
+          width: 100px;
+          height: 100px;
+        }
       }
     }
   }

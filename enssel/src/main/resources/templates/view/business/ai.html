@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko"
+      layout:decorate="~{fragments/layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<section class="enssel-page-layout" layout:fragment="content">
+    <div class="enssel-page-image ai">
+        <h1>AI SOLUTION</h1>
+        <h2>복잡 다양한 문제를 새로운 차원으로 빠르게 가시화합니다.</h2>
+        <div class="business-items">
+            <div class="business-item">OCR</div>
+            <div class="business-item">Machine<br>Vision</div>
+            <div class="business-item">Big Data<br>Analysis</div>
+        </div>
+        <div class="scroll-mark">
+            <div class="scroll-arrow">
+                <span id="left"></span>
+                <span id="center"></span>
+                <span id="right"></span>
+            </div>
+            <h5>SCROLL DOWN</h5>
+        </div>
+    </div>
+    <div class="enssel-contents">
+        <div class="enssel-btn-group">
+            <a class="enssel-btn" href="#OCR">
+                <h2>OCR</h2>
+            </a>
+            <a class="enssel-btn" href="#MachineVision">
+                <h2>Machine<br>Vision</h2>
+            </a>
+            <a class="enssel-btn" href="#BigData">
+                <h2>Big Data<br>Analysis</h2>
+            </a>
+        </div>
+        <div class="enssel-items">
+            <div class="enssel-item-layout" id="OCR">
+                <div class="enssel-item-image">
+                    <img alt="..." th:src="@{/img/business/ai/19-1.jpg}">
+                </div>
+                <div class="enssel-item-info">
+                    <h1>인공지능 OCR<br>(AI Optical Character Recognition)</h1>
+                    <h4>기존 문자판독시스템에 AI기술을 접목하여 높은 정확도 및
+                        속도를 보장합니다.</h4>
+                    <div class="enssel-item-btn-group">
+                        <button>View More(PDF)</button>
+                    </div>
+                </div>
+            </div>
+            <div class="enssel-item-layout" id="MachineVision">
+                <div class="enssel-item-info">
+                    <h1>인공지능 머신비전<br>(AI Machine Vision)</h1>
+                    <h4>고도화된 인공지능 기술을 이용하여 정확하고 신속한
+                        Defect검출 및 불량 판정이 가능한 머신비전 시스템을
+                        개발 공급합니다.</h4>
+                    <div class="enssel-item-btn-group">
+                        <button>View More(PDF)</button>
+                    </div>
+                </div>
+                <div class="enssel-item-image">
+                    <img alt="..." th:src="@{/img/business/ai/19-2.jpg}">
+                </div>
+            </div>
+            <div class="enssel-item-layout" id="BigData">
+                <div class="enssel-item-image">
+                    <img alt="..." th:src="@{/img/business/ai/19-3.jpg}">
+                </div>
+                <div class="enssel-item-info">
+                    <h1>인공지능 빅데이터 분석<br>(AI Bigdata Analysis)</h1>
+                    <h4>다양한 데이터(정형, 비정형, 숫자, 문자, 이미지)를
+                        수집/가공하여 정확한 분석을 해낼 수 있습니다.</h4>
+                    <div class="enssel-item-btn-group">
+                        <button>View More(PDF)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</html>

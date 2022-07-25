@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko"
+      layout:decorate="~{fragments/layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<section class="enssel-page-layout" layout:fragment="content">
+    <div class="enssel-page-image smart-factory">
+        <h1>SMART FACTORY</h1>
+        <h2>Factory 내의 생산과 품질을 한눈에</h2>
+        <div class="business-items">
+            <div class="business-item">MES</div>
+            <div class="business-item">QMS</div>
+            <div class="business-item">EES</div>
+            <div class="business-item">YMS</div>
+        </div>
+        <div class="scroll-mark">
+            <div class="scroll-arrow">
+                <span id="left"></span>
+                <span id="center"></span>
+                <span id="right"></span>
+            </div>
+            <h5>SCROLL DOWN</h5>
+        </div>
+    </div>
+    <div class="enssel-contents">
+        <div class="enssel-btn-group">
+            <a class="enssel-btn" href="#MES">
+                <h2>MES</h2>
+            </a>
+            <a class="enssel-btn" href="#QMS">
+                <h2>QMS</h2>
+            </a>
+            <a class="enssel-btn" href="#EES">
+                <h2>EES</h2>
+            </a>
+            <a class="enssel-btn" href="#YMS">
+                <h2>YMS</h2>
+            </a>
+        </div>
+        <div class="enssel-items">
+            <div class="enssel-item-layout" id="MES">
+                <div class="enssel-item-image">
+                    <img alt="..." th:src="@{/img/business/smartFactory/17-1.jpg}">
+                </div>
+                <div class="enssel-item-info">
+                    <h1>MES<br>(Manufacturing Execution System)</h1>
+                    <h4>엔셀 MES는 제조전반에 대한 생산 활동을 데이터화 및
+                        최적화하여, 유기적으로 신속대응이 가능하도록 함으로써
+                        생산효율을 고도화 할 수 있는 제조 관리 시스템입니다.</h4>
+                    <div class="enssel-item-btn-group">
+                        <button>View More(PDF)</button>
+                    </div>
+                </div>
+            </div>
+            <div class="enssel-item-layout" id="QMS">
+                <div class="enssel-item-info">
+                    <h1>QMS<br>(Quality Management System)</h1>
+                    <h4>엔셀 QMS는 생산 공정에서 발생되는 모든 정보(생산,
+                        검사, 테스트, 수율, 고객)를 데이터화하고 이에 대한 분석
+                        및 모니터링을 자동화함으로서 품질향상 및 품질 비용을
+                        획기적으로 절감할 수 있는 품질 관리 시스템입니다.</h4>
+                    <div class="enssel-item-btn-group">
+                        <button>View More(PDF)</button>
+                    </div>
+                </div>
+                <div class="enssel-item-image">
+                    <img alt="..." th:src="@{/img/business/smartFactory/17-2.jpg}">
+                </div>
+            </div>
+            <div class="enssel-item-layout" id="EES">
+                <div class="enssel-item-image">
+                    <img alt="..." th:src="@{/img/business/smartFactory/17-3.jpg}">
+                </div>
+                <div class="enssel-item-info">
+                    <h1>EES<br>(Equipment Engineering System)</h1>
+                    <h4>엔셀 EES는 설비데이터 및 활용 가능한 모든 데이터를
+                        수집하고 분석/피드백을 자동화하여 설비효율을 높히고
+                        사고를 미연에 방지함으로써 제품의 불량을 감소시킬 수
+                        있는 설비 관리 시스템입니다.</h4>
+                    <div class="enssel-item-btn-group">
+                        <button>View More(PDF)</button>
+                    </div>
+                </div>
+            </div>
+            <div class="enssel-item-layout" id="YMS">
+                <div class="enssel-item-info">
+                    <h1>YMS<br>(Yield Management System)</h1>
+                    <h4>엔셀 YMS는 수율데이터 및 생산공정의 모든 정보(공정,
+                        검사, 계측)를 활용하여 수율 모니터링 및 분석을
+                        자동화하고 불량의 발견, 분석하여 피드백하는데 걸리는
+                        시간을 대폭 단축함으로써 수율향상 및 불량개선을
+                        효과적으로 할 수 있는 수율 관리 시스템입니다.</h4>
+                    <div class="enssel-item-btn-group">
+                        <button>View More(PDF)</button>
+                    </div>
+                </div>
+                <div class="enssel-item-image">
+                    <img alt="..." th:src="@{/img/business/smartFactory/17-4.jpg}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</html>

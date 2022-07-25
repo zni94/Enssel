@@ -1,3 +1,23 @@
+@keyframes scrollDown {
+  from {
+    bottom: 20px
+  }
+  to {
+    bottom: 0px;
+  }
+}
+
+@keyframes modalActive {
+  from {
+    opacity: 0.5;
+    top: -50px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
 $EnsselColor: #142482;
 
 * {
@@ -5,6 +25,10 @@ $EnsselColor: #142482;
   padding: 0;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+body {
+  position: relative;
 }
 
 a {
@@ -17,7 +41,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 1rem 0;
+  margin: 1% 0;
   padding: 0;
   overflow: hidden;
 }
@@ -34,7 +58,7 @@ input, textarea {
   resize: none;
   border: 1px solid $EnsselColor;
   border-radius: 5px;
-  padding: 0.2rem;
+  padding: 0.2%;
   width: 100%;
 }
 
@@ -43,7 +67,90 @@ input:focus, textarea:focus {
 }
 
 .enssel-title {
-  margin: 5rem 0;
+  margin: 5% 0;
+}
+
+.business-items {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 7% 2%;
+  align-items: center;
+
+  .business-item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(120, 130, 255, 0.6);
+    border-radius: 100%;
+    margin: 0 2%;
+    color: white;
+    font-weight: 900;
+    font-size: 1.5em;
+    text-align: center;
+  }
+}
+
+// COMMON BUTTON GROUP
+.enssel-btn-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+
+  .enssel-btn {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    border: 2px solid rgba(120, 130, 255, 0.5);
+    text-align: center;
+    cursor: pointer;
+    margin: 0.5% 1%;
+
+    > h2, > h4 {
+      margin: 0.2% auto;
+    }
+
+    > h2 {
+      font-size: 0.8em;
+      font-weight: 900;
+    }
+
+    > h4 {
+      font-size: 0.6em;
+    }
+  }
+
+  .enssel-btn:hover, .enssel-btn.select {
+    background-color: rgba(120, 130, 255, 0.3);
+
+    > h2, > h4 {
+      color: white;
+    }
+  }
+}
+
+.enssel-btn-group.fixed {
+  width: auto !important;
+  flex-direction: column !important;
+  position: fixed;
+  right: 2%;
+  top: 35%;
+  transform: translateY(-50%);
+
+  .enssel-btn {
+    margin: 10% 0;
+  }
 }
 
 // Page Layout
@@ -51,127 +158,122 @@ input:focus, textarea:focus {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  padding-top: 7vh;
-}
-
-// Page Image & Title
-.enssel-page-image {
-  width: 100%;
-  height: 100vh;
-  background-image: url('https://via.placeholder.com/1920x920/000000/111111');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 0 5rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  justify-content: center;
-
-  > h1 {
-    color: white;
-    font-weight: 900;
-    font-size: 3rem;
-  }
-
-  > h2 {
-    color: white;
-    font-weight: 450;
-    font-size: 1.5rem;
-  }
-}
-
-// 페이지 상세내용
-.enssel-contents {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  margin: 3rem 15rem;
-
-  .enssel-page-title {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-
-    > span {
-      width: 100%;
-      height: 3px;
-      background-color: $EnsselColor;
-    }
-
-    > h1 {
-      font-weight: 900;
-      color: $EnsselColor;
-      margin: 20px 0 20px 10px;
-    }
-  }
-
-  .enssel-hr-line {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    margin: 5rem 0;
-
-    > h2 {
-      color: $EnsselColor;
-      margin: 20px 0 20px 10px;
-    }
-
-    > hr {
-      margin: 0.5rem 0;
-      color: inherit;
-      border: 0;
-      border-top: 3px solid $EnsselColor;
-      opacity: 1;
-    }
-  }
-}
-
-// Max-width < 1020px
-@media (max-width: 1020px) {
-  // Page Layout
-  .enssel-page-layout {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    padding-top: 14vh;
-  }
+  margin-top: 7.5vh;
+  position: relative;
 
   // Page Image & Title
   .enssel-page-image {
     width: 100%;
-    height: 60vh;
-    background-image: url('https://via.placeholder.com/1920x920/000000/111111');
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 0 3rem;
+    padding: 0 5%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: center;
+    position: relative;
 
     > h1 {
       color: white;
       font-weight: 900;
-      font-size: 2.4rem;
+      font-size: 5rem;
     }
 
     > h2 {
       color: white;
       font-weight: 450;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+    }
+
+    .scroll-mark {
+      width: 100%;
+      height: 130px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 0 auto;
+      text-align: center;
+      overflow: hidden;
+      justify-content: center;
+
+      .scroll-arrow {
+        width: 60px;
+        height: 80px;
+        position: relative;
+        overflow: hidden;
+        animation: scrollDown linear 1s infinite;
+
+        span {
+          height: 3px;
+          background-color: white;
+          position: absolute;
+        }
+
+        span#left {
+          transform: rotate(45deg);
+          width: 25px;
+          left: 9px;
+          bottom: 10px;
+        }
+
+        span#center {
+          transform: rotate(90deg);
+          width: 50px;
+          left: 5px;
+          bottom: 27px;
+        }
+
+        span#right {
+          transform: rotate(-45deg);
+          width: 25px;
+          right: 9px;
+          bottom: 10px;
+        }
+      }
+
+      h5 {
+        font-weight: 450;
+        font-size: 1em;
+        color: white;
+        margin: 0.5%;
+      }
     }
   }
 
-  // 페이지 상세내용
+  .enssel-page-image.contact {
+    background-image: url('../img/contact/27.jpg');
+  }
+
+  .enssel-page-image.smart-factory {
+    background-image: url('../img/business/smartFactory/16.jpg');
+  }
+
+  .enssel-page-image.ai {
+    background-image: url('../img/business/ai/18.png');
+  }
+
+  .enssel-page-image.semiconductor {
+    background-image: url('../img/business/semiconductor/21.jpg');
+  }
+
+  .enssel-page-image.culture {
+    background-image: url('../img/enow/24.jpg');
+  }
+
+
+  // Page Detail
   .enssel-contents {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    margin: 3rem 3rem;
+    margin: 3% 20%;
 
     .enssel-page-title {
       display: flex;
@@ -195,7 +297,7 @@ input:focus, textarea:focus {
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
-      margin: 5rem 0;
+      margin-top: 5%;
 
       > h2 {
         color: $EnsselColor;
@@ -203,11 +305,194 @@ input:focus, textarea:focus {
       }
 
       > hr {
-        margin: 0.5rem 0;
+        margin: 0.5% 0;
         color: inherit;
         border: 0;
         border-top: 3px solid $EnsselColor;
         opacity: 1;
+      }
+    }
+  }
+
+  .enssel-btn-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+  }
+}
+
+// Item Layout
+.enssel-items {
+  margin-top: 5%;
+
+  .enssel-item-layout {
+    display: flex;
+    padding: 5%;
+    margin: 0 auto;
+    margin-bottom: 2%;
+
+    > .enssel-item-image, > .enssel-item-info {
+      flex: 1;
+      padding: 5%;
+
+      > img {
+        width: 100%;
+      }
+
+    }
+
+    > .enssel-item-info {
+      > h1 {
+        color: $EnsselColor;
+        font-size: 1.5em;
+        font-weight: 900;
+      }
+
+      > h2 {
+        color: $EnsselColor;
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+
+      > h4 {
+        font-size: 1em;
+        line-height: 1.7em;
+      }
+
+      .enssel-item-btn-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+
+        > button {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: center;
+          border: rgba(120, 130, 255, 0.5);
+          background-color: rgba(120, 130, 255, 0.8);
+          color: white;
+          border-radius: 10px;
+          width: 200px;
+          height: 45px;
+          font-weight: 900;
+          margin: 1rem 0;
+        }
+      }
+    }
+  }
+}
+
+// Enssel Modal
+.enssel-modal {
+  display: none;
+}
+
+.enssel-modal.active {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 1100;
+
+  .enssel-modal-layout {
+    width: 680px;
+    height: 720px;
+    background-color: white;
+    margin-top: 8vh;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    animation: modalActive linear 0.3s forwards;
+  }
+}
+
+// Max-width < 1020px
+@media (max-width: 1020px) {
+  // Page Layout
+  .enssel-page-layout {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 14vh;
+
+    // Page Image & Title
+    .enssel-page-image {
+      width: 100%;
+      height: 60vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 0 1%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      justify-content: center;
+
+      > h1 {
+        color: white;
+        font-weight: 900;
+        font-size: 2.4rem;
+      }
+
+      > h2 {
+        color: white;
+        font-weight: 450;
+        font-size: 1.2rem;
+      }
+    }
+
+    // Page Detail
+    .enssel-contents {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      margin: 3% 1%;
+
+      .enssel-page-title {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        > span {
+          width: 100%;
+          height: 3px;
+          background-color: $EnsselColor;
+        }
+
+        > h1 {
+          font-weight: 900;
+          color: $EnsselColor;
+          margin: 20px 0 20px 10px;
+        }
+      }
+
+      .enssel-hr-line {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        mmargin-top: 5%;
+
+        > h2 {
+          color: $EnsselColor;
+          font-size: 1.2em;
+          margin: 20px 0 20px 10px;
+        }
+
+        > hr {
+          margin: 0.5% 0;
+          color: inherit;
+          border: 0;
+          border-top: 3px solid $EnsselColor;
+          opacity: 1;
+        }
       }
     }
   }
