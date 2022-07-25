@@ -3,12 +3,11 @@
 }
 
 .enssel-map-item {
-  display: none;
+  display: flex;
   flex: auto;
   flex-direction: column;
   flex-wrap: nowrap;
-  margin-top: 5rem;
-  padding: 0 5rem;
+  padding: 10% 5%;
 }
 .enssel-map-item > h1 {
   color: #142482;
@@ -57,10 +56,6 @@
 }
 .enssel-map-item > .enssel-map-info > img {
   width: 50%;
-}
-
-.enssel-map-item.select {
-  display: flex;
 }
 
 /*# sourceMappingURL=map.css.map */

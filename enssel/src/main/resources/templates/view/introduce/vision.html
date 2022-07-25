@@ -4,20 +4,21 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org">
 
-<section class="enssel-page-layout" layout:fragment="content">
-    <div class="enssel-contents">
-        <div class="enssel-page-title" style="width: 100px;">
-            <span></span>
-            <h1>비전</h1>
+<section class="enssel-introduce-layout" layout:fragment="content" style="height: 100%">
+    <div class="enssel-page">
+        <div class="page-header">
+            <div class="page-about">
+                <h4 class="pt-15 center margin-6"></h4>
+            </div>
+            <div class="page-info">
+                <h1 class="title pt-7 regular margin-3" th:text="#{vision.title}"></h1>
+                <h5 class="pt-1 medium margin-3" th:utext="#{vision.message}"></h5>
+            </div>
         </div>
-        <div class="enssel-vision-layout">
-
+        <div class="page-image center">
+            <img alt="..." th:src="@{/img/introduce/8.png}">
         </div>
     </div>
-
-    <script th:inline="javascript">
-
-    </script>
 </section>
 
 </html>

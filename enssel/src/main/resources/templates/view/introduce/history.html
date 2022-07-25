@@ -4,9 +4,231 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org">
 
-<section class="enssel-page-layout" layout:fragment="content">
-    <div class="enssel-contents">
+<section class="enssel-introduce-layout" layout:fragment="content" style="height: 500%">
+    <div class="enssel-page">
+        <div class="page-header">
+            <div class="page-about">
+                <h4 class="pt-15 center margin-6"></h4>
+            </div>
+            <div class="page-info">
+                <h1 class="title pt-7 regular margin-3" th:utext="#{history.title1}"></h1>
+                <h5 class="pt-1 medium margin-3" th:utext="#{history.message1}"></h5>
+            </div>
+        </div>
+        <div class="page-image center">
+        </div>
     </div>
+    <div class="enssel-page">
+        <div class="page-image center">
+            <img alt="..." th:src="@{/img/introduce/10.jpg}">
+        </div>
+        <div class="page-header">
+            <div class="page-info">
+                <h1 class="title pt-3 regular margin-3" th:utext="#{history.title2}"></h1>
+                <h5 class="pt-1 medium margin-3" th:utext="#{history.message2}"></h5>
+            </div>
+        </div>
+    </div>
+    <div class="enssel-page">
+        <div class="page-header">
+            <div class="page-info">
+                <h1 class="title pt-3 regular margin-3" th:utext="#{history.title3}"></h1>
+                <h5 class="pt-1 medium margin-3" th:utext="#{history.message3}"></h5>
+            </div>
+        </div>
+        <div class="page-image center">
+            <img alt="..." th:src="@{/img/introduce/11.jpg}">
+        </div>
+    </div>
+    <div class="enssel-page">
+        <div class="page-image center">
+            <img alt="..." th:src="@{/img/introduce/12.jpg}">
+        </div>
+        <div class="page-header">
+            <div class="page-info">
+                <h1 class="title pt-3 regular margin-3" th:text="#{history.title4}"></h1>
+                <h5 class="pt-1 medium margin-3" th:utext="#{history.message4}"></h5>
+            </div>
+        </div>
+    </div>
+    <div class="enssel-page">
+        <div class="page-header">
+            <div class="page-info">
+                <h1 class="title pt-3 regular margin-3" th:utext="#{history.title5}"></h1>
+                <h5 class="pt-1 medium margin-3" th:utext="#{history.message5}"></h5>
+            </div>
+        </div>
+        <div class="page-image center">
+            <img alt="..." style="object-fit: cover;" th:src="@{/img/introduce/13.jpg}">
+        </div>
+    </div>
+
+    <!-- HISTORY ANIMATION DISPLAY -->
+    <div class="display-history">
+        <div class="history-item" data-index="1">
+            <div class="history-line">
+                <div class="active-line"></div>
+            </div>
+            <div class="history-point">
+                <div name="outCircle"></div>
+                <div name="inCircle"></div>
+            </div>
+        </div>
+        <h5 class="title pt-2 regular center" data-index="1">2007 - 2014</h5>
+        <div class="history-item" data-index="2">
+            <div class="history-line">
+                <div class="active-line"></div>
+            </div>
+            <div class="history-point">
+                <div name="outCircle"></div>
+                <div name="inCircle"></div>
+            </div>
+        </div>
+        <h5 class="title pt-2 regular center" data-index="2">2016 - 2021</h5>
+        <div class="history-item" data-index="3">
+            <div class="history-line">
+                <div class="active-line"></div>
+            </div>
+            <div class="history-point">
+                <div name="outCircle"></div>
+                <div name="inCircle"></div>
+            </div>
+        </div>
+        <h5 class="title pt-2 regular center" data-index="3">2022 - 2028</h5>
+    </div>
+
+    <!-- SCROLL DOWN -->
+    <div class="scroll-mark" style="position: fixed">
+        <div class="scroll-arrow">
+            <span id="left" style="background-color: #ccc;"></span>
+            <span id="center" style="background-color: #ccc;"></span>
+            <span id="right" style="background-color: #ccc;"></span>
+        </div>
+        <h5 style="color: #ccc;">SCROLL DOWN</h5>
+    </div>
+
+    <script th:inline="javascript">
+        // 해당 화면에서는 scroll bar를 hidden
+        $('html').css({overflow: 'hidden'})
+
+        var $html = $('html'),
+            wheelOper = false,
+            page = 1,
+            lastPage = $('.enssel-page').length + 1;
+
+        var timeout;
+
+        window.addEventListener('scroll', function (e) {
+            wheelOper = true;
+            e.preventDefault();
+        }, {passive: false})
+
+        $(window).on('wheel', function (e) {
+            clearTimeout(timeout);
+
+            let deltaY = e.originalEvent.deltaY;
+
+            // 휠을 아래로 내렸을 경우
+            if (deltaY > 0 && !wheelOper) {
+                if (page == lastPage) return;
+                wheelOper = true;
+                page++;
+
+                if (page == lastPage) {
+                    $('.display-history').css({visibility: 'hidden'});
+                }
+
+                switch (page) {
+                    case 3:
+                        Fn_active.item1();
+                        break;
+                    case 4:
+                        Fn_active.item2();
+                        break;
+                    case 5:
+                        Fn_active.item3();
+                        break;
+                }
+
+                let currPos = (page - 1) * window.innerHeight;
+                window.scrollTo(0, currPos);
+            } else if (deltaY < 0 && !wheelOper) {
+                if (page == 1) return;
+                wheelOper = true;
+                page--;
+
+                if (page < 2) {
+                    $('.display-history').css({visibility: 'hidden'});
+                }
+
+                switch (page) {
+                    case 2:
+                        Fn_nonActive.item1();
+                        break;
+                    case 3:
+                        Fn_nonActive.item2();
+                        break;
+                    case 4:
+                        Fn_nonActive.item3();
+                        break;
+                }
+
+                let currPos = (page - 1) * window.innerHeight;
+                window.scrollTo(0, currPos);
+            }
+
+            if (1 < page && page < lastPage) {
+                $('.display-history').css({visibility: 'visible'});
+            }
+
+            timeout = setTimeout(() => {
+                wheelOper = false;
+            }, 700)
+        })
+
+        var Fn_active = {
+            item1() {
+                $('.history-item[data-index=1]').removeClass('nonActive')
+                $('.history-item[data-index=1]').addClass('active')
+                $('h5[data-index=1]').removeClass('nonActive')
+                $('h5[data-index=1]').addClass('active')
+            },
+            item2() {
+                $('.history-item[data-index=2]').removeClass('nonActive')
+                $('.history-item[data-index=2]').addClass('active')
+                $('h5[data-index=2]').removeClass('nonActive')
+                $('h5[data-index=2]').addClass('active')
+            },
+            item3() {
+                $('.history-item[data-index=3]').removeClass('nonActive')
+                $('.history-item[data-index=3]').addClass('active')
+                $('h5[data-index=3]').removeClass('nonActive')
+                $('h5[data-index=3]').addClass('active')
+            },
+        }
+
+        var Fn_nonActive = {
+            item1() {
+                $('.history-item[data-index=1]').addClass('nonActive')
+                $('.history-item[data-index=1]').removeClass('active')
+                $('h5[data-index=1]').addClass('nonActive')
+                $('h5[data-index=1]').removeClass('active')
+            },
+            item2() {
+                $('.history-item[data-index=2]').addClass('nonActive')
+                $('.history-item[data-index=2]').removeClass('active')
+                $('h5[data-index=2]').addClass('nonActive')
+                $('h5[data-index=2]').removeClass('active')
+            },
+            item3() {
+                $('.history-item[data-index=3]').addClass('nonActive')
+                $('.history-item[data-index=3]').removeClass('active')
+                $('h5[data-index=3]').addClass('nonActive')
+                $('h5[data-index=3]').removeClass('active')
+            },
+        }
+    </script>
+
 </section>
 
 </html>

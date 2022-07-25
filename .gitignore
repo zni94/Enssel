@@ -2,7 +2,7 @@
 cat .gitignore
 
 design/
-enssel_backup/
+Enssel_backup/
 result/
 
 =======

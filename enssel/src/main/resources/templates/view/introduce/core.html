@@ -4,14 +4,20 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org">
 
-<section class="enssel-page-layout" layout:fragment="content">
-    <div class="enssel-page-image">
-        <h1>ENSSEL CORE</h1>
-        <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.</h2>
-    </div>
-    <div class="enssel-contents">
+<section class="enssel-introduce-layout" layout:fragment="content" style="height: 100%">
+    <div class="enssel-page">
+        <div class="page-header">
+            <div class="page-about">
+                <h4 class="pt-15 center margin-6"></h4>
+            </div>
+            <div class="page-info">
+                <h1 class="title pt-7 regular margin-3" th:text="#{core.title}"></h1>
+                <h5 class="pt-1 medium margin-3" th:utext="#{core.message}"></h5>
+            </div>
+        </div>
+        <div class="page-image center">
+            <img alt="..." th:src="@{/img/introduce/9.png}">
+        </div>
     </div>
 </section>
 
