@@ -23,10 +23,10 @@ public class Controller {
 
     public ModelAndView getViewName(ModelAndView mav, String page, String display) {
         String viewName = "view/";
-        if (!page.equalsIgnoreCase("") && !display.equalsIgnoreCase(""))
+        if(!page.equalsIgnoreCase("") && !display.equalsIgnoreCase("") )
             viewName += page + "/" + display;
         else
-            viewName += "main";
+            viewName += "index";
 
         mav.setViewName(viewName);
         return mav;
