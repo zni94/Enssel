@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Passion+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Passion+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?&family=Passion+One&display=swap");
 header {
   width: 100%;
   display: flex;
@@ -21,15 +23,13 @@ header .enssel-header-menu-bar {
   background-color: white;
 }
 header .enssel-header-menu-bar .enssel-logo-img {
-  padding: 0 1%;
+  padding: 0 2%;
   cursor: pointer;
   text-align: center;
 }
 header .enssel-header-menu-bar .enssel-logo-img > a {
   margin-left: 0%;
   font-family: "Passion One", sans-serif;
-  font-size: 38px;
-  font-weight: 400;
   color: #142482;
   text-shadow: 1px 1px 1px dimgrey;
 }
@@ -55,8 +55,6 @@ header .enssel-header-menu-bar .enssel-menu-items .enssel-menu-item > span {
   transition: all 0.5s;
 }
 header .enssel-header-menu-bar .enssel-menu-items .enssel-menu-item > h6 {
-  font-weight: bold;
-  font-size: 1.1em;
   text-align: center;
   margin: 10% 0;
 }
@@ -72,7 +70,7 @@ header .enssel-header-menu-detail {
   align-items: center;
   justify-content: flex-end;
   background-color: rgba(26, 30, 130, 0.5);
-  padding: 0 2rem;
+  padding: 0 2%;
   transition: all 1s;
 }
 header .enssel-header-menu-detail .enssel-detail-items {
@@ -89,11 +87,9 @@ header .enssel-header-menu-detail ul.enssel-detail-item {
   text-align: center;
 }
 header .enssel-header-menu-detail ul.enssel-detail-item > li {
-  margin: 1rem 0;
+  margin: 5% 0;
 }
 header .enssel-header-menu-detail ul.enssel-detail-item > li > a {
-  font-weight: 650;
-  font-size: 0.8em;
   color: white;
 }
 

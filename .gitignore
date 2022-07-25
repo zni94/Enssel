@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 cat .gitignore
 
 design/
-enssel_backup/
+Enssel_backup/
 result/
 
-=======
 /.metadata/
->>>>>>> 2f107a32c7d8eb42dd818a0745031a5b6ea62e87
+

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko"
+      th:class="${lang}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/configHead :: confighead"></head>
@@ -10,33 +11,108 @@
 <section layout:fragment="content"></section>
 
 <footer th:replace="fragments/footer :: footer"></footer>
+
 <div class="enssel-modal">
     <div class="enssel-modal-layout">
-
+        <div class="enssel-modal-header">
+            <span class="title pt-1 bold center"><b>Before You Download</b></span>
+            <span class="title pt-1 bold center" id="modalClose" onclick="modal.nonActive()"><b>X</b></span>
+        </div>
+        <div class="enssel-modal-body">
+            <span class="plain pt-1 regular left">
+                Fill out your information in the space provided, and we will email<br>
+                you (at the address provided) a PDF of this case study immediately.
+            </span>
+            <table>
+                <tr>
+                    <td>
+                        <label>First Name</label>
+                        <input name="firstName"/>
+                    </td>
+                    <td>
+                        <label>Last Name</label>
+                        <input name="lastName"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label>Work Email</label>
+                        <input name="email"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label>Company</label>
+                        <input name="company"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Country</label>
+                        <select>
+                            <option disabled="true" selected>Select Country</option>
+                            <option value="korea">Korea</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label>Phone Number</label>
+                        <input name="phoneNumber"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="enssel-modal-footer title bold">
+            <button onclick="modal.nonActive()">SEND</button>
+        </div>
     </div>
 </div>
 <script th:inline="javascript">
-    history.scrollRestoration = "manual"
-    const btnGroup = document.querySelector('div.enssel-btn-group');
+    // 화면 새로고침 시 스크롤 상단 복구
+    history.scrollRestoration = "manual";
+    // 화면 우클릭 방지
+    window.addEventListener('contextmenu', event => event.preventDefault());
+    // 화면 F12 개발자 도구 방지
+    window.addEventListener('keydown', event => {
+        if (event.keyCode == 123 /* F12 */) {
+            event.preventDefault();
+            event.returnValue = false;
+        }
+    })
 
-    var fix = {
-        add() {
-            $(btnGroup).addClass('fixed');
+    var BtnGroup = {
+        fix() {
+            $('.enssel-btn-group').addClass('fixed');
         },
-        remove() {
-            $(btnGroup).removeClass('fixed');
+        unfix() {
+            $('.enssel-btn-group').removeClass('fixed');
         }
     }
 
     window.addEventListener('scroll', function (e) {
-        let last_known_scroll_position = window.scrollY;
+        let scroll_position = window.scrollY;
 
-        if (last_known_scroll_position > 1020) {
-            fix.add()
+        if (scroll_position > 1020) {
+            BtnGroup.fix()
         } else {
-            fix.remove()
+            BtnGroup.unfix()
         }
     });
+
+    var modal = {
+        active() {
+            $('.enssel-modal').addClass('active');
+            $('html').css({overflow: 'hidden'})
+        },
+        nonActive() {
+            $('.enssel-modal').removeClass('active');
+            $('html').css({overflow: 'auto'})
+        }
+    }
+
+    function updateCookie(lang) {
+        document.cookie = "lang=" + lang;
+        location.reload();
+    }
 </script>
 </body>
 

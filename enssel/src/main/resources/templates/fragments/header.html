@@ -1,58 +1,105 @@
 <!DOCTYPE html>
 <html lang="ko"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org">
 
 <header th:fragment="header">
     <div class="enssel-header-menu-bar">
         <div class="enssel-logo-img">
-            <a th:href="'/enssel/'+${lang}">Enssel</a>
+            <a class="logo pt-3 light" th:href="'/enssel'" th:text="#{header.logo}"></a>
         </div>
         <div class="enssel-menu-items">
             <div class="enssel-menu-item">
                 <span></span>
-                <h6>회사정보</h6>
+                <h6 class="title pt-15 regular"
+                    th:text="#{header.introduce}"></h6>
             </div>
             <div class="enssel-menu-item">
                 <span></span>
-                <h6>사업분야</h6>
+                <h6 class="title pt-15 regular"
+                    th:text="#{header.business}"></h6>
             </div>
             <div class="enssel-menu-item">
                 <span></span>
-                <h6>E-NOW</h6>
+                <h6 class="title pt-15 regular"
+                    th:text="#{header.enow}"></h6>
             </div>
             <div class="enssel-menu-item">
                 <span></span>
-                <h6>CONTACT</h6>
+                <h6 class="title pt-15 regular"
+                    th:text="#{header.contact}"></h6>
             </div>
             <div class="enssel-menu-item">
                 <span></span>
-                <h6 th:if="${lang=='kr'}"><a th:text="KOR" th:href="'/enssel/en'"></a></h6>
-                <h6 th:unless="${lang=='kr'}"><a th:text="ENG" th:href="'/enssel/kr'"></a></h6>
+                <h6 class="title pt-15 regular"
+                    th:if="${lang == 'ko'}"
+                    th:onclick="updateCookie('en')"
+                    th:text="#{header.kor}">
+                </h6>
+                <h6 class="title pt-15 regular"
+                    th:if="${lang!='ko'}"
+                    th:onclick="updateCookie('ko')"
+                    th:text="#{header.eng}">
+                </h6>
             </div>
         </div>
     </div>
     <div class="enssel-header-menu-detail">
         <div class="enssel-detail-items">
             <ul class="enssel-detail-item">
-                <li><a th:href="'/enssel/'+${lang}+'?page=introduce&display=vision'">회사비전</a></li>
-                <li><a th:href="'/enssel/'+${lang}+'?page=introduce&display=core'">핵심가치</a></li>
-                <li><a th:href="'/enssel/'+${lang}+'?page=introduce&display=history'">회사이력</a></li>
+                <li class="title pt-1 thin">
+                    <a th:href="'introduce?display=vision'"
+                       th:text="#{header.vision}"></a>
+                </li>
+                <li class="title pt-1 thin">
+                    <a th:href="'introduce?display=core'"
+                       th:text="#{header.core}"></a>
+                </li>
+                <li class="title pt-1 thin">
+                    <a th:href="'introduce?display=history'"
+                       th:text="#{header.history}"></a>
+                </li>
             </ul>
             <ul class="enssel-detail-item">
-                <li><a th:href="'/enssel/'+${lang}+'?page=business&display=smart-factory'">스마트 팩토리</a></li>
-                <li><a th:href="'/enssel/'+${lang}+'?page=business&display=ai'">인공지능</a></li>
-                <li><a th:href="'/enssel/'+${lang}+'?page=business&display=semiconductor'">반도체 장비</a></li>
+                <li class="title pt-1 thin">
+                    <a th:href="'business?display=smart-factory'"
+                       th:text="#{header.smartFactory}"></a>
+                </li>
+                <li class="title pt-1 thin">
+                    <a th:href="'business?display=ai'"
+                       th:text="#{header.ai}"></a>
+                </li>
+                <li class="title pt-1 thin">
+                    <a th:href="'business?display=semi-equipment'"
+                       th:text="#{header.semiEquipment}"></a>
+                </li>
             </ul>
             <ul class="enssel-detail-item">
-                <li><a th:href="'/enssel/'+${lang}+'?page=enow&display=culture'">조직문화</a></li>
-                <li><a th:href="'/enssel/'+${lang}+'?page=enow&display=crew'">엔셀 Crew</a></li>
-                <li><a th:href="'/enssel/'+${lang}+'?page=enow&display=notice'">엔셀 소식</a></li>
+                <li class="title pt-1 thin">
+                    <a th:href="'enow?display=culture'"
+                       th:text="#{header.culture}"></a>
+                </li>
+                <li class="title pt-1 thin">
+                    <a th:href="'enow?display=crew'"
+                       th:text="#{header.crew}"></a>
+                </li>
+                <li class="title pt-1 thin">
+                    <a th:href="'enow?display=news'"
+                       th:text="#{header.news}"></a>
+                </li>
             </ul>
             <ul class="enssel-detail-item">
-                <li><a th:href="'/enssel/'+${lang}+'?page=contact&display=map'">오시는 길</a></li>
-                <li><a th:href="'/enssel/'+${lang}+'?page=contact&display=inquiry'">제품문의</a></li>
-                <li><a th:href="'/enssel/'+${lang}+'?page=contact&display=contact'">연락처</a></li>
+                <li class="title pt-1 thin">
+                    <a th:href="'contact?display=map'"
+                       th:text="#{header.map}"></a>
+                </li>
+                <li class="title pt-1 thin">
+                    <a th:href="'contact?display=inquiry'"
+                       th:text="#{header.inquiry}"></a>
+                </li>
+                <li class="title pt-1 thin">
+                    <a th:href="'contact?display=profile'"
+                       th:text="#{header.profile}"></a>
+                </li>
             </ul>
         </div>
     </div>

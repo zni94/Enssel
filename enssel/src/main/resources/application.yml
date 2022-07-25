@@ -28,3 +28,9 @@ spring:
     prefix: classpath:/templates/
     suffix: .html
     cache: false
+  messages:
+    always-use-message-format: false
+    basename: messages/messages
+    cache-seconds: -1
+    encoding: UTF-8
+    fallback-to-system-locale: false
