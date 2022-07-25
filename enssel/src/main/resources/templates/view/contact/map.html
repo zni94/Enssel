@@ -5,7 +5,7 @@
       xmlns:th="http://www.thymeleaf.org">
 
 <section class="enssel-page-layout" layout:fragment="content">
-    <div class="enssel-page-image map">
+    <div class="enssel-page-image contact">
         <h1>ENSSEL EMPLOYMENT</h1>
         <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
@@ -18,37 +18,37 @@
             <h1>오시는길</h1>
         </div>
         <div class="enssel-btn-group">
-            <div class="enssel-btn" data-index="0" onclick="viewControl(this)">
+            <a class="enssel-btn" href="#Head">
                 <h2>본사</h2>
                 <h4>& 부설연구소</h4>
-            </div>
-            <div class="enssel-btn" data-index="1" onclick="viewControl(this)">
+            </a>
+            <a class="enssel-btn" href="#BunDang">
                 <h2>분당</h2>
                 <h4>개발센터</h4>
-            </div>
-            <div class="enssel-btn" data-index="2" onclick="viewControl(this)">
+            </a>
+            <a class="enssel-btn" href="#CheonAn">
                 <h2>천안/아산</h2>
                 <h4>사업장</h4>
-            </div>
-            <div class="enssel-btn" data-index="3" onclick="viewControl(this)">
+            </a>
+            <a class="enssel-btn" href="#KiHeung">
                 <h2>기흥/화성</h2>
                 <h4>사업장</h4>
-            </div>
-            <div class="enssel-btn" data-index="4" onclick="viewControl(this)">
+            </a>
+            <a class="enssel-btn" href="#PyeongTaek">
                 <h2>평택</h2>
                 <h4>사업장</h4>
-            </div>
-            <div class="enssel-btn" data-index="5" onclick="viewControl(this)">
+            </a>
+            <a class="enssel-btn" href="#CheongJu">
                 <h2>청주</h2>
                 <h4>EM 사업부</h4>
-            </div>
+            </a>
         </div>
         <div class="enssel-map-item-group">
-            <div class="enssel-map-item select" data-index="99">
+            <div class="enssel-map-item">
                 <h1>Enssel MAP</h1>
                 <img th:src="@{img/contact/ensselMap.png}">
             </div>
-            <div class="enssel-map-item" data-index="0">
+            <div class="enssel-map-item" id="Head">
                 <h1>본사 & 부설연구소</h1>
                 <div class="enssel-map-info">
                     <ul>
@@ -92,7 +92,7 @@
                     <img th:src="@{/img/contact/map1.png}">
                 </div>
             </div>
-            <div class="enssel-map-item" data-index="1">
+            <div class="enssel-map-item" id="BunDang">
                 <h1>분당 개발센터</h1>
                 <div class="enssel-map-info">
                     <ul>
@@ -136,7 +136,7 @@
                     <img th:src="@{/img/contact/map2.png}">
                 </div>
             </div>
-            <div class="enssel-map-item" data-index="2">
+            <div class="enssel-map-item" id="CheonAn">
                 <h1>천안/아산 사업장</h1>
                 <div class="enssel-map-info col-md-6">
                     <ul>
@@ -162,7 +162,7 @@
                     <img class="col-md-6" th:src="@{/img/contact/map3.png}">
                 </div>
             </div>
-            <div class="enssel-map-item" data-index="3">
+            <div class="enssel-map-item" id="KiHeung">
                 <h1>기흥/화성 사업장</h1>
                 <div class="enssel-map-info">
                     <ul>
@@ -188,7 +188,7 @@
                     <img th:src="@{/img/contact/map4.png}">
                 </div>
             </div>
-            <div class="enssel-map-item" data-index="4">
+            <div class="enssel-map-item" id="PyeongTaek">
                 <h1>평택 사업장</h1>
                 <div class="enssel-map-info">
                     <ul>
@@ -214,7 +214,7 @@
                     <img th:src="@{/img/contact/map5.png}">
                 </div>
             </div>
-            <div class="enssel-map-item" data-index="5">
+            <div class="enssel-map-item" id="CheongJu">
                 <h1>청주 EM 사업부</h1>
                 <div class="enssel-map-info">
                     <ul>

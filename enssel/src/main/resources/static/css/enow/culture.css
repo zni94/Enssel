@@ -1,0 +1,39 @@
+.enssel-culture-layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.enssel-culture-layout .enssel-culture-img {
+  flex: 1;
+  width: 48%;
+  position: relative;
+  margin: 2%;
+  background-color: #000;
+}
+.enssel-culture-layout .enssel-culture-img > img {
+  width: 100%;
+}
+.enssel-culture-layout .enssel-culture-img > div {
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 0;
+  padding: 5%;
+  justify-content: center;
+}
+.enssel-culture-layout .enssel-culture-img > div > h1, .enssel-culture-layout .enssel-culture-img > div h4 {
+  color: white;
+}
+.enssel-culture-layout .enssel-culture-img > div > h1 {
+  font-weight: 900;
+}
+.enssel-culture-layout .enssel-culture-img:hover > img {
+  opacity: 0.3;
+}
+.enssel-culture-layout .enssel-culture-img:hover > div {
+  display: flex;
+}
+
+/*# sourceMappingURL=culture.css.map */

@@ -9,9 +9,8 @@ footer {
   width: 100%;
   position: relative;
   bottom: 0;
-  padding: 2vh 20vw 1vh;
+  padding: 2vh 15vw 1vh;
   border-top: 1px solid #6d6d6d;
-  margin-top: 5rem;
 
   .enssel-footer-menu-bar {
     width: 100%;
@@ -20,11 +19,11 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
 
     .enssel-footer-menu {
-      width: 270px;
+      width: 330px;
       display: flex;
       padding: 1vh;
       flex-direction: column;
@@ -32,23 +31,17 @@ footer {
 
       > h6 {
         color: #000;
-        font-weight: 900;
       }
 
       > p {
         color: #000;
-        font-size: 0.8em;
-        font-weight: 450;
       }
 
       ul {
-        margin: 0;
         padding: 0;
 
         li {
-          font-size: 0.8em;
           margin-bottom: 2.5vh;
-          font-weight: 450;
 
           div {
             display: grid;

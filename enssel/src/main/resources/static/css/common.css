@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Passion+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 @keyframes scrollDown {
   from {
     bottom: 20px;
@@ -16,15 +20,29 @@
     top: 0;
   }
 }
+@font-face {
+  font-family: "swagger";
+  src: url("../fonts/SwaggerTTF.ttf") format("truetype");
+}
 * {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-body {
-  position: relative;
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: auto;
+  overflow-x: hidden;
+}
+html body {
+  height: 100%;
+}
+html body * {
+  overflow: hidden;
 }
 
 a {
@@ -32,12 +50,8 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  font-weight: bold;
-}
-
 h1, h2, h3, h4, h5, h6 {
-  margin: 1% 0;
+  margin: 0.5% 0;
   padding: 0;
   overflow: hidden;
 }
@@ -49,7 +63,7 @@ ul, li {
   padding: 0;
 }
 
-input, textarea {
+input, textarea, select {
   outline: none;
   resize: none;
   border: 1px solid #142482;
@@ -58,12 +72,112 @@ input, textarea {
   width: 100%;
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, select:focus {
   box-shadow: rgba(120, 150, 255, 0.7) 0px 0px 7px 3px;
 }
 
-.enssel-title {
-  margin: 5% 0;
+.hide {
+  display: none;
+}
+
+.ko .logo, .ko .logo * {
+  font-family: "Passion One", sans-serif;
+}
+.ko .title, .ko .title * {
+  font-family: "swagger", sans-serif;
+}
+.ko .plain, .ko .plain * {
+  font-family: "Noto sans KR", sans-serif;
+}
+
+.en .logo, .en .logo * {
+  font-family: "Passion One", sans-serif;
+}
+.en .title, .en .title * {
+  font-family: "Anton", sans-serif;
+}
+.en .plain, .en .plain * {
+  font-family: "Noto sans KR", sans-serif;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.black {
+  font-weight: 900;
+}
+
+.pt-05 {
+  font-size: 0.5em;
+}
+
+.pt-08 {
+  font-size: 0.8em;
+}
+
+.pt-1 {
+  font-size: 1em;
+}
+
+.pt-15 {
+  font-size: 1.5em;
+}
+
+.pt-2 {
+  font-size: 2em;
+}
+
+.pt-25 {
+  font-size: 2.5em;
+}
+
+.pt-3 {
+  font-size: 3em;
+}
+
+.pt-7 {
+  font-size: 7em;
+}
+
+.pt-12 {
+  font-size: 12em;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.margin-3 {
+  margin: 3% 0;
+}
+
+.margin-6 {
+  margin: 6% 0;
 }
 
 .business-items {
@@ -82,13 +196,10 @@ input:focus, textarea:focus {
   align-items: center;
   width: 150px;
   height: 150px;
-  background-color: rgba(120, 130, 255, 0.6);
+  background-color: rgba(55, 55, 55, 0.6);
   border-radius: 100%;
   margin: 0 2%;
   color: white;
-  font-weight: 900;
-  font-size: 1.5em;
-  text-align: center;
 }
 
 .enssel-btn-group {
@@ -107,19 +218,11 @@ input:focus, textarea:focus {
   justify-content: center;
   border-radius: 100%;
   border: 2px solid rgba(120, 130, 255, 0.5);
-  text-align: center;
   cursor: pointer;
   margin: 0.5% 1%;
 }
 .enssel-btn-group .enssel-btn > h2, .enssel-btn-group .enssel-btn > h4 {
   margin: 0.2% auto;
-}
-.enssel-btn-group .enssel-btn > h2 {
-  font-size: 0.8em;
-  font-weight: 900;
-}
-.enssel-btn-group .enssel-btn > h4 {
-  font-size: 0.6em;
 }
 .enssel-btn-group .enssel-btn:hover, .enssel-btn-group .enssel-btn.select {
   background-color: rgba(120, 130, 255, 0.3);
@@ -133,18 +236,69 @@ input:focus, textarea:focus {
   flex-direction: column !important;
   position: fixed;
   right: 2%;
-  top: 25%;
+  top: 35%;
   transform: translateY(-50%);
 }
 .enssel-btn-group.fixed .enssel-btn {
   margin: 10% 0;
 }
 
+.scroll-mark {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  justify-content: center;
+}
+.scroll-mark .scroll-arrow {
+  width: 60px;
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  animation: scrollDown linear 1s infinite;
+}
+.scroll-mark .scroll-arrow span {
+  height: 2px;
+  background-color: white;
+  position: absolute;
+}
+.scroll-mark .scroll-arrow span#left {
+  transform: rotate(45deg);
+  width: 25px;
+  left: 9px;
+  bottom: 10px;
+}
+.scroll-mark .scroll-arrow span#center {
+  transform: rotate(90deg);
+  width: 50px;
+  left: 5px;
+  bottom: 27px;
+}
+.scroll-mark .scroll-arrow span#right {
+  transform: rotate(-45deg);
+  width: 25px;
+  right: 9px;
+  bottom: 10px;
+}
+.scroll-mark h5 {
+  font-weight: 450;
+  font-size: 1em;
+  color: white;
+  margin: 0.5%;
+}
+
 .enssel-page-layout {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  margin-top: 8vh;
   position: relative;
 }
 .enssel-page-layout .enssel-page-image {
@@ -163,67 +317,10 @@ input:focus, textarea:focus {
 }
 .enssel-page-layout .enssel-page-image > h1 {
   color: white;
-  font-weight: 900;
-  font-size: 5rem;
 }
 .enssel-page-layout .enssel-page-image > h2 {
   color: white;
-  font-weight: 450;
-  font-size: 1.5rem;
 }
-.enssel-page-layout .enssel-page-image .scroll-mark {
-  width: 100%;
-  height: 130px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 0 auto;
-  text-align: center;
-  overflow: hidden;
-  justify-content: center;
-}
-.enssel-page-layout .enssel-page-image .scroll-mark .scroll-arrow {
-  width: 60px;
-  height: 80px;
-  position: relative;
-  overflow: hidden;
-  animation: scrollDown linear 1s infinite;
-}
-.enssel-page-layout .enssel-page-image .scroll-mark .scroll-arrow span {
-  height: 3px;
-  background-color: white;
-  position: absolute;
-}
-.enssel-page-layout .enssel-page-image .scroll-mark .scroll-arrow span#left {
-  transform: rotate(45deg);
-  width: 25px;
-  left: 9px;
-  bottom: 10px;
-}
-.enssel-page-layout .enssel-page-image .scroll-mark .scroll-arrow span#center {
-  transform: rotate(90deg);
-  width: 50px;
-  left: 5px;
-  bottom: 27px;
-}
-.enssel-page-layout .enssel-page-image .scroll-mark .scroll-arrow span#right {
-  transform: rotate(-45deg);
-  width: 25px;
-  right: 9px;
-  bottom: 10px;
-}
-.enssel-page-layout .enssel-page-image .scroll-mark h5 {
-  font-weight: 450;
-  font-size: 1em;
-  color: white;
-  margin: 0.5%;
-}
-.enssel-page-layout .enssel-page-image.map,
-.enssel-page-layout .enssel-page-image.inquiry,
 .enssel-page-layout .enssel-page-image.contact {
   background-image: url("../img/contact/27.jpg");
 }
@@ -234,7 +331,10 @@ input:focus, textarea:focus {
   background-image: url("../img/business/ai/18.png");
 }
 .enssel-page-layout .enssel-page-image.semiconductor {
-  background-image: url("../img/business/semiconductor/21.jpg");
+  background-image: url("../img/business/semiconductor/21.png");
+}
+.enssel-page-layout .enssel-page-image.culture {
+  background-image: url("../img/enow/24.jpg");
 }
 .enssel-page-layout .enssel-contents {
   display: flex;
@@ -287,29 +387,22 @@ input:focus, textarea:focus {
 }
 .enssel-items .enssel-item-layout {
   display: flex;
-  padding: 5%;
-  margin: 0 auto;
-  margin-bottom: 2%;
+  margin: 5%;
 }
 .enssel-items .enssel-item-layout > .enssel-item-image, .enssel-items .enssel-item-layout > .enssel-item-info {
   flex: 1;
-  padding: 5%;
+  margin: 3%;
 }
 .enssel-items .enssel-item-layout > .enssel-item-image > img, .enssel-items .enssel-item-layout > .enssel-item-info > img {
   width: 100%;
 }
 .enssel-items .enssel-item-layout > .enssel-item-info > h1 {
   color: #142482;
-  font-size: 1.5em;
-  font-weight: 900;
 }
 .enssel-items .enssel-item-layout > .enssel-item-info > h2 {
   color: #142482;
-  font-size: 1.2em;
-  font-weight: 600;
 }
 .enssel-items .enssel-item-layout > .enssel-item-info > h4 {
-  font-size: 1em;
   line-height: 1.7em;
 }
 .enssel-items .enssel-item-layout > .enssel-item-info .enssel-item-btn-group {
@@ -334,21 +427,20 @@ input:focus, textarea:focus {
 
 .enssel-modal {
   display: none;
-}
-
-.enssel-modal.active {
-  display: block;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
   z-index: 1100;
 }
+
+.enssel-modal.active {
+  display: block;
+}
 .enssel-modal.active .enssel-modal-layout {
-  width: 680px;
-  height: 720px;
+  width: 560px;
   background-color: white;
   margin-top: 8vh;
   top: -50px;
@@ -356,6 +448,63 @@ input:focus, textarea:focus {
   transform: translateX(-50%);
   position: fixed;
   animation: modalActive linear 0.3s forwards;
+}
+.enssel-modal.active .enssel-modal-layout .enssel-modal-header {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5em;
+  font-weight: 900;
+  color: rgb(120, 150, 255);
+  padding: 1% 5%;
+}
+.enssel-modal.active .enssel-modal-layout .enssel-modal-header #modalClose {
+  cursor: pointer;
+}
+.enssel-modal.active .enssel-modal-layout .enssel-modal-body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 2%;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+}
+.enssel-modal.active .enssel-modal-layout .enssel-modal-body table {
+  margin: 5%;
+}
+.enssel-modal.active .enssel-modal-layout .enssel-modal-body table tbody > tr > td {
+  padding: 3% 5%;
+}
+.enssel-modal.active .enssel-modal-layout .enssel-modal-body table tbody > tr > td > label {
+  font-weight: 900;
+  color: rgb(120, 130, 255);
+}
+.enssel-modal.active .enssel-modal-layout .enssel-modal-body table tbody > tr > td > input, .enssel-modal.active .enssel-modal-layout .enssel-modal-body table tbody > tr > td select {
+  border-radius: 0;
+  border-color: #bbb;
+  height: 30px;
+}
+.enssel-modal.active .enssel-modal-layout .enssel-modal-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.enssel-modal.active .enssel-modal-layout .enssel-modal-footer > button {
+  color: white;
+  border: none;
+  outline: none;
+  background-color: rgb(120, 150, 255);
+  border-radius: 10px;
+  width: 150px;
+  height: 40px;
+  font-weight: 900;
+  margin: 3% auto;
 }
 
 @media (max-width: 1020px) {

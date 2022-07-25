@@ -1,0 +1,204 @@
+@keyframes showLine {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes hideLine {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+@keyframes showOutCircle {
+  from {
+    border: 2px solid #ccc;
+  }
+  to {
+    border: 2px solid #142482;
+  }
+}
+@keyframes hideOutCircle {
+  from {
+    border: 2px solid #142482;
+  }
+  to {
+    border: 2px solid #ccc;
+  }
+}
+@keyframes showInCircle {
+  from {
+    background-color: #ccc;
+  }
+  to {
+    background-color: #142482;
+  }
+}
+@keyframes hideInCircle {
+  from {
+    background-color: #142482;
+  }
+  to {
+    background-color: #ccc;
+  }
+}
+@keyframes textShow {
+  from {
+    color: #ccc;
+  }
+  to {
+    color: #142482;
+  }
+}
+@keyframes textHide {
+  from {
+    color: #142482;
+  }
+  to {
+    color: #ccc;
+  }
+}
+.enssel-introduce-layout {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  position: relative;
+}
+.enssel-introduce-layout .enssel-page {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 250px;
+}
+.enssel-introduce-layout .enssel-page .page-header {
+  flex: 1.2;
+}
+.enssel-introduce-layout .enssel-page .page-header .page-about {
+  width: 150px;
+}
+.enssel-introduce-layout .enssel-page .page-header .page-about > h4 {
+  border-top: 5px solid #142482;
+}
+.enssel-introduce-layout .enssel-page .page-info > h1 {
+  color: #142482;
+}
+.enssel-introduce-layout .enssel-page .page-info > h5 {
+  line-height: 2em;
+  white-space: initial;
+}
+.enssel-introduce-layout .enssel-page .page-image {
+  flex: 2;
+}
+.enssel-introduce-layout .enssel-page .page-image > img {
+  width: 100%;
+  height: 450px;
+  object-fit: contain;
+  object-position: center;
+  padding: 0px 75px;
+}
+.enssel-introduce-layout .display-history {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  padding: 0 250px;
+  position: fixed;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: nowrap;
+  visibility: hidden;
+}
+.enssel-introduce-layout .display-history .history-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex: 1;
+  position: relative;
+}
+.enssel-introduce-layout .display-history .history-item > .history-line {
+  flex: 8;
+  height: 2px;
+  background-color: #ccc;
+  position: relative;
+}
+.enssel-introduce-layout .display-history .history-item > .history-line > .active-line {
+  width: 0%;
+  height: 100%;
+  background-color: #142482;
+}
+.enssel-introduce-layout .display-history .history-item > .history-point {
+  height: 52px;
+  position: relative;
+  flex: 1;
+}
+.enssel-introduce-layout .display-history .history-item > .history-point > div[name=outCircle] {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 2px solid #ccc;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.enssel-introduce-layout .display-history .history-item > .history-point > div[name=inCircle] {
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+  border: 0;
+  background-color: #ccc;
+  position: absolute;
+  margin: 25%;
+  top: 0;
+  left: 0;
+}
+.enssel-introduce-layout .display-history > h5 {
+  position: absolute;
+  bottom: 50px;
+  color: #ccc;
+}
+.enssel-introduce-layout .display-history > h5.active {
+  animation: textShow 1.5s linear forwards;
+}
+.enssel-introduce-layout .display-history > h5.nonActive {
+  animation: textHide 1.5s linear forwards;
+}
+.enssel-introduce-layout .display-history > h5[data-index="1"] {
+  left: 555px;
+}
+.enssel-introduce-layout .display-history > h5[data-index="2"] {
+  left: 1030px;
+}
+.enssel-introduce-layout .display-history > h5[data-index="3"] {
+  left: 1495px;
+}
+.enssel-introduce-layout .display-history .history-item.active > .history-line > .active-line {
+  animation: showLine 0.5s linear forwards;
+}
+.enssel-introduce-layout .display-history .history-item.active > .history-point > div[name=outCircle] {
+  animation: showOutCircle 1.5s linear forwards;
+}
+.enssel-introduce-layout .display-history .history-item.active > .history-point > div[name=inCircle] {
+  animation: showInCircle 1.5s linear forwards;
+}
+.enssel-introduce-layout .display-history .history-item.nonActive > .history-line > .active-line {
+  animation: hideLine 0.5s linear forwards;
+}
+.enssel-introduce-layout .display-history .history-item.nonActive > .history-point > div[name=outCircle] {
+  animation: hideOutCircle 1.5s linear forwards;
+}
+.enssel-introduce-layout .display-history .history-item.nonActive > .history-point > div[name=inCircle] {
+  animation: hideInCircle 1.5s linear forwards;
+}
+
+/*# sourceMappingURL=history.css.map */

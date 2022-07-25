@@ -4,7 +4,7 @@
   }
 
   25% {
-    left: 75%;
+    left: 50%;
   }
 
   50% {
@@ -12,7 +12,7 @@
   }
 
   75% {
-    left: -75%;
+    left: -50%;
   }
 
   100% {
@@ -26,16 +26,18 @@ section.enssel-index {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  margin-top: 8vh;
 
   .enssel-main-item1 {
+    position: relative;
+    height: 100vh;
+
     .enssel-info {
       display: flex;
-      margin-top: 15rem;
+      margin-top: 15%;
       position: absolute;
       width: 60%;
       z-index: 900;
-      top: 8vh;
+      top: 7.5vh;
       left: 50%;
       transform: translateX(-50%);
       flex-direction: column;
@@ -44,7 +46,6 @@ section.enssel-index {
       > h1 {
         color: white;
         width: 100%;
-        font-weight: 900;
         text-align: center;
       }
 
@@ -56,7 +57,6 @@ section.enssel-index {
         > h4 {
           color: white;
           width: 100%;
-          font-weight: 600;
           line-height: 3rem;
         }
       }
@@ -69,7 +69,7 @@ section.enssel-index {
         align-items: center;
         justify-items: center;
         justify-content: center;
-        padding: 5rem 0px 2rem;
+        padding: 5% 0px 2%;
 
         .card {
           width: 30% !important;
@@ -134,6 +134,8 @@ section.enssel-index {
 
   .enssel-main-item2 {
     width: 100%;
+    height: 100vh;
+    position: relative;
     display: flex;
     align-items: center;
     justify-items: center;
@@ -142,7 +144,6 @@ section.enssel-index {
 
     > h1 {
       color: #142482;
-      font-weight: 900;
       text-align: center;
     }
 
@@ -161,13 +162,12 @@ section.enssel-index {
         background-color: #000;
         position: relative;
         bottom: 0;
-        transition: all 0.25s;
 
         > img {
           width: 100%;
           height: 100%;
           opacity: 0.5;
-          transition: all 0.25s;
+          //transition: all 0.25s;
         }
 
         > div.enssel-business-preview {
@@ -193,10 +193,8 @@ section.enssel-index {
             justify-content: center;
             align-items: center;
             text-align: center;
-            font-weight: 900;
-            font-size: 3em;
             height: 420px;
-            line-height: 1em;
+            line-height: 1.5em;
           }
 
           > h4 {
@@ -231,7 +229,6 @@ section.enssel-index {
 
               > h5 {
                 color: white;
-                font-size: 1.1em;
                 line-height: 2em;
               }
             }
@@ -254,8 +251,6 @@ section.enssel-index {
                 align-items: center;
                 justify-content: center;
                 color: white;
-                font-size: 1.5em;
-                font-weight: 900;
               }
             }
           }
@@ -270,9 +265,7 @@ section.enssel-index {
             flex-wrap: nowrap;
             justify-content: center;
             align-items: flex-start;
-            font-weight: 900;
             height: 85px;
-            font-size: 3.5em;
             line-height: 1em;
           }
 
@@ -327,8 +320,8 @@ section.enssel-index {
 
   .enssel-main-item3 {
     height: 100vh;
+    position: relative;
     background: url('../img/main/4.jpg') center/cover no-repeat;
-    margin-top: 9.5rem;
 
     .card {
       width: 100%;
@@ -348,15 +341,14 @@ section.enssel-index {
 
         h1 {
           color: white;
-          margin-bottom: 3vh;
-          font-weight: 700;
+          height: 50px;
         }
 
         a {
           width: 7rem;
           height: 7rem;
           border-radius: 100%;
-          border: 2px dotted white;
+          border: 2px solid white;
           background: transparent;
           color: white;
           display: flex;
@@ -366,8 +358,6 @@ section.enssel-index {
           align-items: center;
 
           > p {
-            font-size: 1.2em;
-            font-weight: 900;
             margin: 0 auto;
           }
         }
@@ -382,6 +372,8 @@ section.enssel-index {
 
   .enssel-main-item4 {
     width: 100%;
+    height: 100vh;
+    position: relative;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -389,19 +381,17 @@ section.enssel-index {
 
     h1 {
       color: #142482;
-      font-weight: 900;
       text-align: center;
     }
 
     h2 {
       color: #6d6d6d;
-      font-weight: 600;
       text-align: center;
     }
 
     .enssel-culture-photos {
       white-space: nowrap;
-      width: calc(50% * 5);
+      width: calc(40% * 5);
       display: flex;
       flex-wrap: nowrap;
       flex-direction: row;
@@ -411,8 +401,8 @@ section.enssel-index {
       animation: slideImg 60s linear infinite;
 
       > img {
-        width: 50%;
-        height: 660px
+        width: 40%;
+        height: 480px
       }
     }
   }
@@ -562,13 +552,13 @@ section.enssel-index {
           background-color: #000;
           position: relative;
           bottom: 0;
-          transition: all 0.5s;
+          //transition: all 0.5s;
 
           > img {
             width: 100%;
             height: 100%;
             opacity: 0.5;
-            transition: all 0.5s;
+            //transition: all 0.5s;
           }
 
           > div.enssel-business-preview {
